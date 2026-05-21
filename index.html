@@ -1538,6 +1538,18 @@ function nkPct(temp){
     }
   }, {passive:true});
 })();
+
+// ── FAQ トグル ──
+function toggleFaq(el) {
+  var item = el.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(i){
+    i.classList.remove('open');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+  }
+}
 </script>
 
 <button class="scroll-top" id="scrollTop" aria-label="ページトップへ">
