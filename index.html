@@ -1431,16 +1431,21 @@ function nkPct(temp){
 (function(){
   var btn = document.getElementById('scrollTop');
   if(!btn) return;
-  btn.addEventListener('click', function(){
-    window.scrollTo({top:0, behavior:'smooth'});
-  });
-  window.addEventListener('scroll', function(){
+  function checkScroll(){
     if(window.scrollY > 400){
       btn.classList.add('show');
     } else {
       btn.classList.remove('show');
     }
-  }, {passive:true});
+  }
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+  window.addEventListener('scroll', checkScroll, {passive:true});
+  window.addEventListener('touchmove', checkScroll, {passive:true});
+  // 初期チェック（ページ読み込み直後・戻る/進む時）
+  checkScroll();
+  window.addEventListener('pageshow', checkScroll);
 })();
 
 // ── 下へスクロール矢印: ヒーロー内のみ表示 ──
