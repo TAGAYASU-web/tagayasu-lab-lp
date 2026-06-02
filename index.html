@@ -36,7 +36,10 @@ body{
 }
 
 /* ─────────── SCROLL ANIMATION ─────────── */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease;pointer-events:none;}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;pointer-events:none;}
+/* ヒーロー内は最初から表示 */
+.hero .reveal{opacity:1;transform:none;pointer-events:auto;}
+
 .reveal.visible{opacity:1;transform:none;pointer-events:auto;}
 
 /* ─────────── NAV ─────────── */
