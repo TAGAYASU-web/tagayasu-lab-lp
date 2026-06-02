@@ -6,112 +6,184 @@
 <title>かしこいTAGAYASUのつかい方 | Human Warmth Lab TAGAYASU</title>
 <meta name="description" content="土をほぐし、体温の通うチームを育む5つのステップ。TAGAYASUとの関わりかたをシンプルにまとめました。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;700&family=Zen+Maru+Gothic:wght@300;400;500&family=Noto+Serif+JP:wght@300;400&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;700&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --cream:#FDFAF4;
-  --paper:#F7F2E6;
-  --warm:#F0EAD8;
-  --gold:#806830;
-  --gold-lt:#C9A55A;
-  --green:#3B5E3A;
-  --stone:#6A6050;
-  --ink:#2E2A24;
-  --muted:#9A9080;
+  --cream:#FDFAF4; --paper:#F7F2E6; --warm:#F0EAD8;
+  --gold:#806830; --gold-lt:#C9A55A; --gold-bg:#F7F2E4;
+  --green:#3B5E3A; --green-lt:#6B8F4A; --teal:#4A8A78; --teal-lt:#EEF7F4;
+  --stone:#6A6050; --ink:#2E2A24; --muted:#9A9080;
   --rust:#C0543A;
   --line:rgba(128,104,48,.14);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{
-  background:var(--cream);
-  color:var(--ink);
-  font-family:'Noto Serif JP',serif;
-  font-weight:300;
-  line-height:2;
+  background:var(--cream);color:var(--ink);
+  font-family:'Noto Serif JP',serif;font-weight:400;line-height:1.9;
   overflow-x:hidden;
 }
 body::before{
   content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.02'/%3E%3C/svg%3E");
-  opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.022'/%3E%3C/svg%3E");
+  opacity:.55;
 }
 
-/* NAV */
+/* ── NAV ── */
 .site-header{
   display:flex;align-items:center;justify-content:space-between;
-  padding:16px 28px;border-bottom:1px solid var(--line);
+  padding:18px 32px;border-bottom:1px solid var(--line);
   position:sticky;top:0;z-index:100;
   background:rgba(253,250,244,.95);backdrop-filter:blur(10px);
 }
-.h-logo{display:flex;align-items:center;gap:9px;text-decoration:none;}
-.h-logo-img{width:32px;height:32px;border-radius:50%;overflow:hidden;flex-shrink:0;}
+.h-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.h-logo-img{width:34px;height:34px;border-radius:50%;overflow:hidden;flex-shrink:0;}
 .h-logo-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.16);}
-.h-logo-text{font-family:'Kaisei Tokumin',serif;font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.06em;}
-.h-back{font-family:'Zen Maru Gothic',sans-serif;font-size:11px;color:var(--muted);text-decoration:none;letter-spacing:.06em;border-bottom:1px solid var(--line);transition:color .2s;}
+.h-logo-text{font-family:'Kaisei Tokumin',serif;font-size:14px;font-weight:700;color:var(--gold);letter-spacing:.06em;}
+.h-back{font-family:'Zen Maru Gothic',sans-serif;font-size:12px;color:var(--muted);text-decoration:none;letter-spacing:.06em;border-bottom:1px solid var(--line);transition:color .2s;}
 .h-back:hover{color:var(--gold);}
 
-/* PAGE */
-.page{position:relative;z-index:1;max-width:560px;margin:0 auto;padding:0 24px 120px;}
-@media(max-width:600px){.page{padding:0 16px 80px;}}
+/* ── PAGE ── */
+.page{position:relative;z-index:1;max-width:640px;margin:0 auto;padding:0 32px 120px;}
+@media(max-width:600px){.page{padding:0 20px 80px;}}
 
-/* TITLE */
-.title-area{text-align:center;padding:88px 0 72px;}
-.title-label{font-family:'Zen Maru Gothic',sans-serif;font-size:10px;letter-spacing:.55em;color:var(--muted);display:block;margin-bottom:22px;}
-.title-main{font-family:'Kaisei Tokumin',serif;font-size:clamp(30px,6vw,46px);font-weight:700;color:var(--ink);letter-spacing:.04em;line-height:1.4;margin-bottom:20px;}
-.title-sub{font-family:'Zen Maru Gothic',sans-serif;font-size:13px;color:var(--stone);line-height:2.1;letter-spacing:.04em;}
-.title-rule{width:28px;height:1px;background:var(--gold-lt);margin:28px auto 0;}
+/* ── TITLE ── */
+.title-area{text-align:center;padding:96px 0 80px;}
+.title-kana{font-family:'Zen Maru Gothic',sans-serif;font-size:10px;letter-spacing:.55em;color:var(--muted);display:block;margin-bottom:24px;}
+.title-main{font-family:'Kaisei Tokumin',serif;font-size:clamp(30px,6vw,48px);font-weight:700;color:var(--ink);line-height:1.38;margin-bottom:24px;letter-spacing:.04em;}
+.title-sub{font-family:'Zen Maru Gothic',sans-serif;font-size:13px;color:var(--stone);line-height:2.2;letter-spacing:.04em;}
+.title-rule{width:28px;height:1px;background:var(--gold-lt);margin:32px auto 0;}
 
-/* STEPS */
+/* ── INTRO ── */
+.intro-note{
+  background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--gold-lt);
+  padding:32px 36px;margin-bottom:80px;position:relative;
+  font-size:14px;color:var(--stone);line-height:2.2;
+}
+.intro-note::before{content:'📌';position:absolute;top:-14px;left:24px;font-size:18px;}
+
+/* ── STEPS ── */
 .steps{display:flex;flex-direction:column;align-items:center;}
 
-.step{width:100%;text-align:center;}
+/* ── SINGLE STEP ── */
+.step{
+  width:100%;
+  text-align:center;
+  padding:72px 0 0;
+}
 
-.step-connector{display:flex;justify-content:center;padding:4px 0;}
-
-/* PICTOGRAM */
+/* ── PICTOGRAM ── */
 .step-pict{
-  margin:0 auto 24px;
+  margin:0 auto 36px;
   display:flex;align-items:center;justify-content:center;
 }
 .step-pict svg{display:block;overflow:visible;}
 
-/* TEXT */
-.step-label{font-family:'Zen Maru Gothic',sans-serif;font-size:10px;letter-spacing:.3em;color:var(--rust);display:block;margin-bottom:10px;}
-.step-title{font-family:'Kaisei Tokumin',serif;font-size:clamp(24px,4vw,34px);font-weight:700;color:var(--ink);line-height:1.45;margin-bottom:8px;}
-.step-note{font-family:'Zen Maru Gothic',sans-serif;font-size:13px;color:var(--stone);line-height:1.8;}
-
-.step-section{padding:64px 0 0;}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease;}
-.reveal.in{opacity:1;transform:none;}
-
-/* CTA */
-.final-cta{
-  margin-top:88px;text-align:center;
-  padding:56px 32px;background:var(--paper);
-  border:1px solid var(--line);position:relative;
+/* ── STEP TEXT ── */
+.step-label{
+  font-family:'Zen Maru Gothic',sans-serif;
+  font-size:10px;letter-spacing:.32em;color:var(--rust);
+  display:block;margin-bottom:12px;
 }
-.final-cta::before,.final-cta::after{content:'✦';position:absolute;top:18px;font-size:12px;color:var(--gold-lt);}
-.final-cta::before{left:20px;}.final-cta::after{right:20px;}
-.cta-eyebrow{font-family:'Zen Maru Gothic',sans-serif;font-size:11px;letter-spacing:.2em;color:var(--muted);display:block;margin-bottom:14px;}
-.cta-title{font-family:'Kaisei Tokumin',serif;font-size:clamp(20px,3.5vw,26px);font-weight:700;color:var(--ink);line-height:1.55;margin-bottom:20px;}
-.cta-note{font-family:'Zen Maru Gothic',sans-serif;font-size:13px;color:var(--stone);line-height:2;margin-bottom:28px;}
-.btn-group{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:18px;}
-.btn-main{background:var(--green);color:#fff;font-family:'Zen Maru Gothic',sans-serif;font-size:13px;padding:13px 30px;text-decoration:none;letter-spacing:.08em;border:2px solid var(--green);transition:all .2s;}
+.step-title{
+  font-family:'Kaisei Tokumin',serif;
+  font-size:clamp(24px,4.5vw,36px);font-weight:700;
+  color:var(--ink);line-height:1.45;margin-bottom:12px;
+}
+.step-note{
+  font-family:'Zen Maru Gothic',sans-serif;
+  font-size:14px;color:var(--stone);line-height:1.9;
+  margin-bottom:28px;
+}
+
+/* ── STEP BODY（既存コンテンツ） ── */
+.step-body-content{
+  text-align:left;
+  background:var(--paper);border:1px solid var(--line);
+  padding:28px 32px;margin-top:24px;
+  font-size:14px;color:var(--stone);line-height:2.1;
+}
+@media(max-width:480px){.step-body-content{padding:20px 18px;}}
+
+.step-body-content p{margin-bottom:14px;}
+.step-body-content p:last-child{margin-bottom:0;}
+
+/* callout */
+.callout{
+  border-left:3px solid var(--gold-lt);
+  padding:16px 20px;margin-top:16px;
+  background:var(--gold-bg);
+  font-size:13px;color:var(--stone);line-height:2.1;
+}
+.callout strong{color:var(--ink);}
+
+/* cards */
+.card-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;}
+@media(max-width:480px){.card-row{grid-template-columns:1fr;}}
+.mini-card{
+  background:var(--cream);border:1px solid var(--line);
+  padding:16px;text-align:center;position:relative;border-radius:2px;
+}
+.mini-card::before{content:'';position:absolute;inset:3px;border:1px dashed rgba(128,104,48,.1);border-radius:1px;pointer-events:none;}
+.mini-card-icon{font-size:24px;margin-bottom:8px;display:block;}
+.mini-card-label{font-family:'Zen Maru Gothic',sans-serif;font-size:12px;color:var(--stone);line-height:1.7;}
+.mini-card-label strong{color:var(--ink);display:block;font-size:13px;margin-bottom:2px;}
+
+/* price table */
+.price-table{width:100%;border-collapse:collapse;margin-top:16px;font-size:13px;}
+.price-table th{background:var(--warm);color:var(--stone);font-family:'Zen Maru Gothic',sans-serif;font-weight:500;font-size:11px;letter-spacing:.1em;padding:8px 12px;text-align:left;border-bottom:2px solid var(--gold-lt);}
+.price-table td{padding:10px 12px;border-bottom:1px dashed var(--line);color:var(--stone);vertical-align:top;line-height:1.7;}
+.price-table tr:last-child td{border-bottom:none;}
+.price-table td:first-child{color:var(--ink);font-weight:500;}
+.price-table tr.hl td{background:var(--paper);}
+.price-table tr.hl td:first-child{color:var(--gold);font-weight:700;}
+.price-table tr.tl td:first-child{color:var(--teal);font-weight:700;}
+
+/* ── CONNECTOR ── */
+.step-connector{display:flex;justify-content:center;padding:0;}
+.step-connector svg{display:block;}
+
+/* ── ABOUT ── */
+.about-mini{
+  display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;
+  padding:24px 28px;background:var(--paper);border:1px solid var(--line);margin-top:80px;
+}
+.about-mini-logo{width:60px;height:60px;border-radius:50%;overflow:hidden;flex-shrink:0;}
+.about-mini-logo img{width:100%;height:100%;object-fit:cover;transform:scale(1.16);}
+.about-mini-name{font-family:'Kaisei Tokumin',serif;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:2px;}
+.about-mini-role{font-family:'Zen Maru Gothic',sans-serif;font-size:11px;color:var(--teal);letter-spacing:.1em;margin-bottom:6px;}
+.about-mini-body{font-size:13px;color:var(--stone);line-height:1.9;}
+
+/* ── CTA ── */
+.final-cta{
+  text-align:center;margin-top:80px;
+  padding:56px 32px;background:var(--paper);border:1px solid var(--line);position:relative;
+}
+.final-cta::before,.final-cta::after{content:'✦';position:absolute;top:18px;font-size:13px;color:var(--gold-lt);}
+.final-cta::before{left:22px;}.final-cta::after{right:22px;}
+.cta-hand{font-family:'Caveat',cursive;font-size:16px;color:var(--muted);display:block;margin-bottom:12px;}
+.cta-title{font-family:'Kaisei Tokumin',serif;font-size:clamp(20px,3.5vw,28px);font-weight:700;color:var(--ink);line-height:1.5;margin-bottom:18px;}
+.cta-title em{color:var(--gold);font-style:normal;}
+.cta-body{font-size:13px;color:var(--stone);line-height:2;margin-bottom:28px;max-width:400px;margin-left:auto;margin-right:auto;}
+.btn-group{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:22px;}
+.btn-main{background:var(--green);color:#fff;font-family:'Zen Maru Gothic',sans-serif;font-size:13px;padding:14px 30px;text-decoration:none;letter-spacing:.08em;border:2px solid var(--green);transition:all .2s;}
 .btn-main:hover{background:transparent;color:var(--green);}
-.btn-sub{border:1.5px solid var(--gold-lt);color:var(--gold);font-family:'Zen Maru Gothic',sans-serif;font-size:13px;padding:12px 24px;text-decoration:none;letter-spacing:.08em;background:transparent;transition:all .2s;}
+.btn-sub{border:1.5px solid var(--gold-lt);color:var(--gold);font-family:'Zen Maru Gothic',sans-serif;font-size:13px;padding:13px 24px;text-decoration:none;letter-spacing:.08em;background:transparent;transition:all .2s;}
 .btn-sub:hover{background:var(--gold);color:#fff;}
 .cta-free{font-family:'Zen Maru Gothic',sans-serif;font-size:11px;color:var(--muted);letter-spacing:.1em;}
 
-/* FOOTER */
-.page-footer{text-align:center;padding:36px 28px;border-top:1px solid var(--line);margin-top:80px;font-family:'Zen Maru Gothic',sans-serif;font-size:11px;color:var(--muted);letter-spacing:.1em;}
+/* ── FOOTER ── */
+.page-footer{text-align:center;padding:40px 28px;border-top:1px solid var(--line);margin-top:80px;font-family:'Zen Maru Gothic',sans-serif;font-size:11px;color:var(--muted);letter-spacing:.1em;}
 .page-footer a{color:var(--gold);text-decoration:none;}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease;}
+.reveal.in{opacity:1;transform:none;}
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <header class="site-header">
   <a href="https://tagayasu-lab.jp/" class="h-logo">
     <div class="h-logo-img">
@@ -124,212 +196,194 @@ body::before{
 
 <div class="page">
 
+  <!-- TITLE -->
   <div class="title-area reveal">
-    <span class="title-label">KASHIKOI TAGAYASU NO TSUKAIKATA</span>
+    <span class="title-kana">KASHIKOI TAGAYASU NO TSUKAIKATA</span>
     <h1 class="title-main">かしこい<br>TAGAYASUの<br>つかい方</h1>
     <p class="title-sub">土をほぐし、体温の通うチームを育む<br>5つのステップ</p>
     <div class="title-rule"></div>
   </div>
 
+  <!-- INTRO -->
+  <div class="intro-note reveal">
+    TAGAYASUは「相談しにくい」と感じている経営者のための存在です。<br>
+    「どこから話せばいいかわからない」という方こそ、まずここから。<br>
+    最初のステップは、<strong>5分・タダ</strong>です。
+  </div>
+
+  <!-- STEPS -->
   <div class="steps">
 
-    <!-- ══════════════════════════════
-         STEP 1: まず、診断してみる
-         3パネル: あなた → 体温計 → スッキリ
-         viewBox: 300 × 120
-         パネル幅80px、間隔30px
-         左人: cx=40, 体温計: cx=150, 右人: cx=260
-    ══════════════════════════════ -->
-    <div class="step step-section reveal">
+    <!-- ══ STEP 1 ══ -->
+    <div class="step reveal">
+
+      <!-- SVG PICTOGRAM -->
       <div class="step-pict">
         <svg width="300" height="120" viewBox="0 0 300 120" fill="none" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round">
-
-          <!-- ── 左の人（モヤっと） cx=40 ── -->
-          <!-- 頭: cy=20, r=12 → 底辺y=32 -->
+          <!-- 左の人（モヤっと） cx=40 -->
           <circle cx="40" cy="20" r="12" stroke="#2E2A24" stroke-width="2.2"/>
-          <!-- 体: y=32〜58 -->
           <line x1="40" y1="32" x2="40" y2="58" stroke="#2E2A24" stroke-width="2.2"/>
-          <!-- 腕: y=44 中間点。左腕はやや下向き（元気なし） -->
           <line x1="40" y1="44" x2="22" y2="54" stroke="#2E2A24" stroke-width="2.2"/>
           <line x1="40" y1="44" x2="58" y2="54" stroke="#2E2A24" stroke-width="2.2"/>
-          <!-- 足: y=58〜80 -->
           <line x1="40" y1="58" x2="28" y2="80" stroke="#2E2A24" stroke-width="2.2"/>
           <line x1="40" y1="58" x2="52" y2="80" stroke="#2E2A24" stroke-width="2.2"/>
-          <!-- モヤ: 頭上y=4〜8, x=26〜54 均等3本 -->
+          <!-- モヤ3本 頭上y=4〜8 -->
           <path d="M26 8 Q30 3 34 8" stroke="#9A9080" stroke-width="1.5" fill="none"/>
           <path d="M36 4 Q40 0 44 4" stroke="#9A9080" stroke-width="1.5" fill="none"/>
           <path d="M46 8 Q50 3 54 8" stroke="#9A9080" stroke-width="1.5" fill="none"/>
-          <!-- ラベル -->
           <text x="40" y="98" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="10" fill="#9A9080">あなた</text>
 
-          <!-- ── 矢印: x=72→104, y=45 ── -->
-          <line x1="72" y1="45" x2="104" y2="45" stroke="#C9A55A" stroke-width="1.5" stroke-dasharray="4 3"/>
-          <polygon points="101,41 109,45 101,49" fill="#C9A55A"/>
+          <!-- 矢印 x=70→104 y=45 -->
+          <line x1="70" y1="45" x2="102" y2="45" stroke="#C9A55A" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <polygon points="99,41 107,45 99,49" fill="#C9A55A"/>
 
-          <!-- ── 体温計（主役） cx=150 ── -->
-          <!-- チューブ: x=142, y=10, w=16, h=54, rx=8 → 底y=64 -->
+          <!-- 体温計（主役）cx=150 -->
           <rect x="142" y="10" width="16" height="54" rx="8" stroke="#2E2A24" stroke-width="2.2" fill="none"/>
-          <!-- 水銀柱: x=146, y=26, w=8, h=34, rx=4 → 底y=60 -->
           <rect x="146" y="26" width="8" height="34" rx="4" fill="#C9A55A"/>
-          <!-- 球部: cy=72, r=10 -->
           <circle cx="150" cy="72" r="10" stroke="#2E2A24" stroke-width="2.2" fill="none"/>
           <circle cx="150" cy="72" r="6" fill="#C9A55A"/>
-          <!-- 目盛り 3本: チューブ右端x=158, 均等y=26,38,50 -->
           <line x1="158" y1="26" x2="165" y2="26" stroke="#2E2A24" stroke-width="1.2"/>
           <line x1="158" y1="38" x2="163" y2="38" stroke="#2E2A24" stroke-width="1"/>
           <line x1="158" y1="50" x2="165" y2="50" stroke="#2E2A24" stroke-width="1.2"/>
-          <!-- 36℃ テキスト: チューブ上 y=7 -->
           <text x="150" y="7" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="9" fill="#C9A55A" font-weight="500">36℃</text>
-          <!-- ラベル -->
           <text x="150" y="98" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="10" fill="#9A9080">Nukumol</text>
 
-          <!-- ── 矢印: x=192→224, y=45 ── -->
-          <line x1="192" y1="45" x2="220" y2="45" stroke="#C9A55A" stroke-width="1.5" stroke-dasharray="4 3"/>
-          <polygon points="217,41 225,45 217,49" fill="#C9A55A"/>
+          <!-- 矢印 x=194→224 y=45 -->
+          <line x1="194" y1="45" x2="222" y2="45" stroke="#C9A55A" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <polygon points="219,41 227,45 219,49" fill="#C9A55A"/>
 
-          <!-- ── 右の人（スッキリ） cx=260 ── -->
+          <!-- 右の人（スッキリ）cx=260 -->
           <circle cx="260" cy="20" r="12" stroke="#2E2A24" stroke-width="2.2"/>
           <line x1="260" y1="32" x2="260" y2="58" stroke="#2E2A24" stroke-width="2.2"/>
-          <!-- 腕を上げる（元気！） -->
           <line x1="260" y1="44" x2="240" y2="30" stroke="#2E2A24" stroke-width="2.2"/>
           <line x1="260" y1="44" x2="280" y2="30" stroke="#2E2A24" stroke-width="2.2"/>
           <line x1="260" y1="58" x2="248" y2="80" stroke="#2E2A24" stroke-width="2.2"/>
           <line x1="260" y1="58" x2="272" y2="80" stroke="#2E2A24" stroke-width="2.2"/>
-          <!-- キラキラ: 頭右上 x=276,y=10 と x=268,y=4 -->
           <text x="276" y="14" font-family="sans-serif" font-size="12" fill="#C9A55A">★</text>
           <text x="265" y="6" font-family="sans-serif" font-size="8" fill="#C9A55A">✦</text>
-          <!-- ラベル -->
           <text x="260" y="98" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="10" fill="#9A9080">スッキリ！</text>
-
         </svg>
       </div>
+
       <span class="step-label">1. FIRST THING</span>
       <h2 class="step-title">まず、診断してみる。</h2>
       <p class="step-note">（5分・タダ）</p>
+
+      <div class="step-body-content">
+        <p>TAGAYASUのウェブ診断ツール「<strong>Nukumol（ぬくもる）</strong>」で、あなたの組織の"体温"を測ってみてください。</p>
+        <p>いくつかの質問に答えるだけで、チームの状態が数字で見えてきます。費用はゼロ、時間は5分。</p>
+        <div class="callout">
+          💡 「なんとなく気になっている」くらいの感覚でOKです。<br>
+          「問題があるかどうか」を確かめるためのツールです。
+        </div>
+        <div style="text-align:center;margin-top:20px;">
+          <a href="https://nukumol-heart-pulse.base44.app" target="_blank" rel="noopener" style="display:inline-block;background:var(--green);color:#fff;font-family:'Zen Maru Gothic',sans-serif;font-size:13px;padding:12px 28px;text-decoration:none;letter-spacing:.08em;border:2px solid var(--green);transition:all .2s;">
+            Nukumolで診断してみる →
+          </a>
+        </div>
+      </div>
     </div>
 
     <!-- connector -->
     <div class="step-connector reveal">
-      <svg width="2" height="60" viewBox="0 0 2 60">
-        <line x1="1" y1="0" x2="1" y2="60" stroke="#C9A55A" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <svg width="2" height="72" viewBox="0 0 2 72">
+        <line x1="1" y1="0" x2="1" y2="72" stroke="#C9A55A" stroke-width="1.5" stroke-dasharray="5 4"/>
       </svg>
     </div>
 
-    <!-- ══════════════════════════════
-         STEP 2: 話してみる
-         2人: 左(経営者)cx=60, 右(TAGAYASU)cx=240
-         吹き出し: 左人頭上
-         viewBox: 300 × 120
-    ══════════════════════════════ -->
+    <!-- ══ STEP 2 ══ -->
     <div class="step reveal">
+
       <div class="step-pict">
         <svg width="300" height="120" viewBox="0 0 300 120" fill="none" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round">
-
-          <!-- ── 左の人（経営者） cx=60 ── -->
+          <!-- 左の人（経営者）cx=60 -->
           <circle cx="60" cy="22" r="12" stroke="#2E2A24" stroke-width="2.2"/>
           <line x1="60" y1="34" x2="60" y2="60" stroke="#2E2A24" stroke-width="2.2"/>
-          <!-- 腕: やや前向き -->
           <line x1="60" y1="46" x2="42" y2="56" stroke="#2E2A24" stroke-width="2.2"/>
           <line x1="60" y1="46" x2="78" y2="54" stroke="#2E2A24" stroke-width="2.2"/>
           <line x1="60" y1="60" x2="48" y2="82" stroke="#2E2A24" stroke-width="2.2"/>
           <line x1="60" y1="60" x2="72" y2="82" stroke="#2E2A24" stroke-width="2.2"/>
-          <!-- 吹き出し: 頭上方、左人の頭 cy=22 r=12 → 頭上y=10
-               吹き出し矩形: x=14,y=-14, w=52,h=28, rx=6
-               しっぽ: 頭頂上へ向かう小三角 -->
+          <!-- 吹き出し：頭上 -->
           <rect x="14" y="-16" width="52" height="26" rx="5" stroke="#2E2A24" stroke-width="1.8" fill="white"/>
-          <!-- … 3つの点: y=-5, x=28,40,52 -->
           <circle cx="29" cy="-3" r="2.5" fill="#2E2A24"/>
           <circle cx="40" cy="-3" r="2.5" fill="#2E2A24"/>
           <circle cx="51" cy="-3" r="2.5" fill="#2E2A24"/>
-          <!-- しっぽ三角: 吹き出し底辺中央x=40,y=10 → 人頭上 -->
           <polygon points="36,10 44,10 40,16" fill="white" stroke="#2E2A24" stroke-width="1.8" stroke-linejoin="round"/>
-          <!-- ラベル -->
           <text x="60" y="100" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="10" fill="#9A9080">経営者</text>
 
-          <!-- ── 中央: 矢印＋テキスト ── -->
-          <!-- 矢印: x=96→204, y=50 -->
+          <!-- 矢印＋ラベル -->
           <line x1="96" y1="50" x2="198" y2="50" stroke="#C9A55A" stroke-width="1.5" stroke-dasharray="5 4"/>
           <polygon points="195,46 203,50 195,54" fill="#C9A55A"/>
-          <!-- ラベル -->
           <text x="150" y="43" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="9" fill="#9A9080">30分・無料</text>
 
-          <!-- ── 右の人（TAGAYASU・前のめり） cx=240 ── -->
-          <!-- 前傾: 体軸を左10°回転、pivot=(240,48) -->
+          <!-- 右の人（TAGAYASU・前のめり）cx=240 -->
           <g transform="rotate(-10, 240, 48)">
             <circle cx="240" cy="22" r="12" stroke="#3B5E3A" stroke-width="2.2"/>
             <line x1="240" y1="34" x2="240" y2="60" stroke="#3B5E3A" stroke-width="2.2"/>
-            <!-- 腕: 前に伸ばす（聴く姿勢） -->
             <line x1="240" y1="46" x2="220" y2="40" stroke="#3B5E3A" stroke-width="2.2"/>
             <line x1="240" y1="46" x2="258" y2="40" stroke="#3B5E3A" stroke-width="2.2"/>
             <line x1="240" y1="60" x2="228" y2="82" stroke="#3B5E3A" stroke-width="2.2"/>
             <line x1="240" y1="60" x2="252" y2="82" stroke="#3B5E3A" stroke-width="2.2"/>
           </g>
-          <!-- ハート: 前傾人の胸あたり rotate後のおよその位置 x=218,y=42 -->
           <text x="214" y="48" font-family="sans-serif" font-size="16" fill="#C9A55A">♡</text>
-          <!-- ラベル -->
           <text x="240" y="100" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="10" fill="#3B5E3A">TAGAYASU</text>
-          <!-- 勧誘なし -->
           <text x="150" y="114" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="9" fill="#9A9080">勧誘なし ●</text>
-
         </svg>
       </div>
+
       <span class="step-label">2. FREE TALK</span>
       <h2 class="step-title">話してみる</h2>
       <p class="step-note">（30分・無料・勧誘なし）</p>
+
+      <div class="step-body-content">
+        <p>診断結果を持って、30分のオンライン対話に来てください。診断結果がなくても大丈夫です。</p>
+        <p>ここでは「売り込み」は一切しません。ただ、聴くだけです。話しながら、自分でも気づいていなかった問いが浮かび上がることがあります。</p>
+        <div class="callout">
+          🙅 「まだ依頼するつもりはない」という方も歓迎です。<br>
+          「話してみたら、なんかスッキリした」という声が一番多い時間です。
+        </div>
+      </div>
     </div>
 
     <!-- connector -->
     <div class="step-connector reveal">
-      <svg width="2" height="60" viewBox="0 0 60"><line x1="1" y1="0" x2="1" y2="60" stroke="#C9A55A" stroke-width="1.5" stroke-dasharray="5 4"/></svg>
+      <svg width="2" height="72" viewBox="0 0 2 72">
+        <line x1="1" y1="0" x2="1" y2="72" stroke="#C9A55A" stroke-width="1.5" stroke-dasharray="5 4"/>
+      </svg>
     </div>
 
-    <!-- ══════════════════════════════
-         STEP 3: 土壌を一緒に掘り起こす
-         左人cx=60, 右人cx=240, テーブルcx=150
-         体温計: テーブル上 cx=150, y=10〜60
-         レポート: 右端x=264
-         viewBox: 300 × 130
-    ══════════════════════════════ -->
+    <!-- ══ STEP 3 ══ -->
     <div class="step reveal">
+
       <div class="step-pict">
         <svg width="300" height="130" viewBox="0 0 300 130" fill="none" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round">
-
-          <!-- ── テーブル: 楕円 cx=150,cy=78, rx=38,ry=12 ── -->
+          <!-- テーブル cx=150,cy=78 -->
           <ellipse cx="150" cy="78" rx="38" ry="12" stroke="#2E2A24" stroke-width="1.8" fill="#F0EAD8"/>
 
-          <!-- ── 左の人（座り） cx=72, 上半身cy=28 ── -->
+          <!-- 左の人（座り）cx=72 -->
           <circle cx="72" cy="28" r="11" stroke="#2E2A24" stroke-width="2.2"/>
-          <!-- 体: y=39〜60 -->
           <line x1="72" y1="39" x2="72" y2="60" stroke="#2E2A24" stroke-width="2.2"/>
-          <!-- 腕: テーブルへ向かう / y=50 -->
           <line x1="72" y1="50" x2="54" y2="60" stroke="#2E2A24" stroke-width="2.2"/>
           <line x1="72" y1="50" x2="96" y2="60" stroke="#2E2A24" stroke-width="2.2"/>
-          <!-- 座り足: y=60〜78 折れ曲がり -->
           <line x1="72" y1="60" x2="60" y2="76" stroke="#2E2A24" stroke-width="2.2"/>
           <line x1="72" y1="60" x2="84" y2="76" stroke="#2E2A24" stroke-width="2.2"/>
-          <!-- ！（気づき）: 頭左上 x=58,y=18 -->
           <text x="55" y="22" font-family="'Zen Maru Gothic',sans-serif" font-size="16" fill="#C9A55A" font-weight="700">!</text>
 
-          <!-- ── 体温計（テーブルの上・主役） cx=150 ── -->
-          <!-- チューブ: x=143,y=18, w=14,h=48, rx=7 → 底y=66 -->
+          <!-- 体温計（テーブル上）cx=150 -->
           <rect x="143" y="18" width="14" height="48" rx="7" stroke="#2E2A24" stroke-width="2.2" fill="none"/>
-          <!-- 水銀: x=147,y=30, w=6,h=32, rx=3 → 底y=62 -->
           <rect x="147" y="30" width="6" height="32" rx="3" fill="#C9A55A"/>
-          <!-- 球: cy=70, r=8 ── テーブル楕円のcy=78なのでテーブル上にきれいに乗る -->
           <circle cx="150" cy="70" r="8" stroke="#2E2A24" stroke-width="2.2" fill="none"/>
           <circle cx="150" cy="70" r="4.5" fill="#C9A55A"/>
-          <!-- 目盛り: チューブ右x=157, y=30,41,52 -->
           <line x1="157" y1="30" x2="163" y2="30" stroke="#2E2A24" stroke-width="1.2"/>
           <line x1="157" y1="41" x2="161" y2="41" stroke="#2E2A24" stroke-width="1"/>
           <line x1="157" y1="52" x2="163" y2="52" stroke="#2E2A24" stroke-width="1.2"/>
-          <!-- 体温計の小さな顔（ユーモア）: y=24〜28 -->
+          <!-- 体温計の小顔（ユーモア） -->
           <circle cx="147" cy="25" r="1.5" fill="#2E2A24"/>
           <circle cx="153" cy="25" r="1.5" fill="#2E2A24"/>
           <path d="M146 28 Q150 31 154 28" stroke="#2E2A24" stroke-width="1.2" fill="none"/>
-          <!-- ラベル: チューブ上 y=14 -->
           <text x="150" y="14" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="8.5" fill="#C9A55A">36℃</text>
 
-          <!-- ── 右の人（座り） cx=228 ── -->
+          <!-- 右の人（座り）cx=228 -->
           <circle cx="228" cy="28" r="11" stroke="#2E2A24" stroke-width="2.2"/>
           <line x1="228" y1="39" x2="228" y2="60" stroke="#2E2A24" stroke-width="2.2"/>
           <line x1="228" y1="50" x2="210" y2="60" stroke="#2E2A24" stroke-width="2.2"/>
@@ -337,46 +391,52 @@ body::before{
           <line x1="228" y1="60" x2="216" y2="76" stroke="#2E2A24" stroke-width="2.2"/>
           <line x1="228" y1="60" x2="240" y2="76" stroke="#2E2A24" stroke-width="2.2"/>
 
-          <!-- ── 矢印 テーブル右端→レポート: x=190→210, y=78 ── -->
-          <line x1="192" y1="78" x2="254" y2="78" stroke="#C9A55A" stroke-width="1.5" stroke-dasharray="4 3"/>
-          <polygon points="251,74 259,78 251,82" fill="#C9A55A"/>
+          <!-- 矢印→レポート -->
+          <line x1="192" y1="78" x2="252" y2="78" stroke="#C9A55A" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <polygon points="249,74 257,78 249,82" fill="#C9A55A"/>
 
-          <!-- ── レポート: x=262,y=58, w=28,h=36, rx=2 ── -->
-          <rect x="262" y="58" width="28" height="36" rx="2" stroke="#2E2A24" stroke-width="1.8" fill="white"/>
-          <line x1="268" y1="68" x2="284" y2="68" stroke="#2E2A24" stroke-width="1.2"/>
-          <line x1="268" y1="76" x2="282" y2="76" stroke="#2E2A24" stroke-width="1"/>
-          <line x1="268" y1="84" x2="284" y2="84" stroke="#2E2A24" stroke-width="1.2"/>
-          <!-- スタンプ: 右下角内 cx=284,cy=88, r=5 -->
-          <circle cx="284" cy="89" r="4" stroke="#C9A55A" stroke-width="1.5" fill="none"/>
+          <!-- レポート x=260,y=58 -->
+          <rect x="260" y="58" width="28" height="36" rx="2" stroke="#2E2A24" stroke-width="1.8" fill="white"/>
+          <line x1="266" y1="68" x2="282" y2="68" stroke="#2E2A24" stroke-width="1.2"/>
+          <line x1="266" y1="76" x2="280" y2="76" stroke="#2E2A24" stroke-width="1"/>
+          <line x1="266" y1="84" x2="282" y2="84" stroke="#2E2A24" stroke-width="1.2"/>
+          <circle cx="282" cy="89" r="4" stroke="#C9A55A" stroke-width="1.5" fill="none"/>
 
-          <!-- ラベル -->
-          <text x="150" y="110" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="10" fill="#9A9080">90分</text>
-          <text x="276" y="110" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="8.5" fill="#9A9080">レポート</text>
-
+          <text x="140" y="110" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="10" fill="#9A9080">90分</text>
+          <text x="274" y="110" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="8.5" fill="#9A9080">レポート</text>
         </svg>
       </div>
+
       <span class="step-label">3. DIAGNOSIS SESSION</span>
       <h2 class="step-title">土壌を一緒に<br>掘り起こす。</h2>
       <p class="step-note">（90分・¥50,000）</p>
+
+      <div class="step-body-content">
+        <p>本格的な対話セッションです。TAGAYASUがあなたの組織の"土の状態"を、一緒に丁寧に掘り起こします。</p>
+        <p>話しながら見えてくること、気づくこと、言語化できること。それが診断の価値です。</p>
+        <table class="price-table">
+          <tr><th>項目</th><th>内容</th></tr>
+          <tr><td>時間</td><td>90分（オンライン）</td></tr>
+          <tr class="hl"><td>費用</td><td>¥50,000（税込）</td></tr>
+          <tr><td>成果物</td><td>土壌診断レポート（後日納品）</td></tr>
+          <tr class="tl"><td>特典</td><td>本契約に進んだ場合、全額返金</td></tr>
+        </table>
+      </div>
     </div>
 
     <!-- connector -->
     <div class="step-connector reveal">
-      <svg width="2" height="60" viewBox="0 0 2 60"><line x1="1" y1="0" x2="1" y2="60" stroke="#C9A55A" stroke-width="1.5" stroke-dasharray="5 4"/></svg>
+      <svg width="2" height="72" viewBox="0 0 2 72">
+        <line x1="1" y1="0" x2="1" y2="72" stroke="#C9A55A" stroke-width="1.5" stroke-dasharray="5 4"/>
+      </svg>
     </div>
 
-    <!-- ══════════════════════════════
-         STEP 4: ひとつだけ選ぶ
-         カード4枚: x=10,80,150,220, 各w=54,h=66
-         カード2(x=80)が選ばれる
-         人: cx=270
-         viewBox: 300 × 130
-    ══════════════════════════════ -->
+    <!-- ══ STEP 4 ══ -->
     <div class="step reveal">
+
       <div class="step-pict">
         <svg width="300" height="130" viewBox="0 0 300 130" fill="none" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round">
-
-          <!-- ── カード1（未選択・左5°傾き） x=10,y=22 ── -->
+          <!-- カード1（未選択・左5°） -->
           <g transform="rotate(-5, 37, 55)">
             <rect x="10" y="22" width="54" height="66" rx="3" stroke="#C8BFB0" stroke-width="1.8" fill="none"/>
             <line x1="22" y1="44" x2="52" y2="44" stroke="#C8BFB0" stroke-width="1.2"/>
@@ -384,20 +444,17 @@ body::before{
           </g>
           <text x="37" y="104" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="9" fill="#9A9080">対話WS</text>
 
-          <!-- ── カード2（選ばれた！ 正立） x=80,y=16 → 少し大きく ── -->
+          <!-- カード2（選ばれた・正立・大きめ） -->
           <rect x="78" y="14" width="58" height="72" rx="3" stroke="#3B5E3A" stroke-width="2.5" fill="rgba(59,94,58,0.04)"/>
           <line x1="90" y1="36" x2="124" y2="36" stroke="#3B5E3A" stroke-width="1.5"/>
           <line x1="90" y1="48" x2="120" y2="48" stroke="#3B5E3A" stroke-width="1.5"/>
-          <!-- 芽: カード上端(y=14)から上へ -->
+          <!-- 芽 -->
           <line x1="107" y1="14" x2="107" y2="2" stroke="#3B5E3A" stroke-width="2"/>
-          <!-- 左葉 -->
           <path d="M107 8 Q98 4 96 -2" stroke="#3B5E3A" stroke-width="1.8" fill="none"/>
-          <!-- 右葉 -->
           <path d="M107 5 Q116 1 118 -5" stroke="#3B5E3A" stroke-width="1.8" fill="none"/>
-          <!-- ✓チェック -->
           <text x="107" y="104" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="9.5" fill="#3B5E3A" font-weight="500">✓ 耕育</text>
 
-          <!-- ── カード3（未選択・右3°） x=152,y=22 ── -->
+          <!-- カード3（未選択・右3°） -->
           <g transform="rotate(3, 179, 55)">
             <rect x="152" y="22" width="54" height="66" rx="3" stroke="#C8BFB0" stroke-width="1.8" fill="none"/>
             <line x1="164" y1="44" x2="194" y2="44" stroke="#C8BFB0" stroke-width="1.2"/>
@@ -405,7 +462,7 @@ body::before{
           </g>
           <text x="179" y="104" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="9" fill="#9A9080">予防ケア</text>
 
-          <!-- ── カード4（未選択・右6°） x=222,y=22 ── -->
+          <!-- カード4（未選択・右6°） -->
           <g transform="rotate(6, 249, 55)">
             <rect x="222" y="22" width="54" height="66" rx="3" stroke="#C8BFB0" stroke-width="1.8" fill="none"/>
             <line x1="234" y1="44" x2="264" y2="44" stroke="#C8BFB0" stroke-width="1.2"/>
@@ -413,65 +470,77 @@ body::before{
           </g>
           <text x="249" y="104" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="9" fill="#9A9080">余白づくり</text>
 
-          <!-- ── 「ひとつだけでOK」── -->
           <text x="150" y="120" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="9.5" fill="#9A9080">ひとつだけでOK</text>
-
         </svg>
       </div>
+
       <span class="step-label">4. CHOOSE YOUR MENU</span>
       <h2 class="step-title">お品書きから<br>ひとつだけ選ぶ</h2>
       <p class="step-note">（全部は頼まなくていい）</p>
+
+      <div class="step-body-content">
+        <p>診断レポートをもとに、TAGAYASUの「お品書き」から一つだけプログラムを選びます。全部やる必要はありません。今の組織に必要な一手だけを。</p>
+        <div class="card-row">
+          <div class="mini-card">
+            <span class="mini-card-icon">🌱</span>
+            <div class="mini-card-label"><strong>耕育プログラム</strong>土台をつくる人材育成</div>
+          </div>
+          <div class="mini-card">
+            <span class="mini-card-icon">🪵</span>
+            <div class="mini-card-label"><strong>対話ワークショップ</strong>チームの対話を耕す</div>
+          </div>
+          <div class="mini-card">
+            <span class="mini-card-icon">🧊</span>
+            <div class="mini-card-label"><strong>組織の予防ケア</strong>土壌定点観測</div>
+          </div>
+          <div class="mini-card">
+            <span class="mini-card-icon">🖼️</span>
+            <div class="mini-card-label"><strong>余白づくり</strong>経営者の内省設計</div>
+          </div>
+        </div>
+        <div class="callout">
+          💬 「どれがいいかわからない」という方は、<br>
+          Step 3の診断セッションの中で一緒に見極めます。
+        </div>
+      </div>
     </div>
 
     <!-- connector -->
     <div class="step-connector reveal">
-      <svg width="2" height="60" viewBox="0 0 2 60"><line x1="1" y1="0" x2="1" y2="60" stroke="#C9A55A" stroke-width="1.5" stroke-dasharray="5 4"/></svg>
+      <svg width="2" height="72" viewBox="0 0 2 72">
+        <line x1="1" y1="0" x2="1" y2="72" stroke="#C9A55A" stroke-width="1.5" stroke-dasharray="5 4"/>
+      </svg>
     </div>
 
-    <!-- ══════════════════════════════
-         STEP 5: TAGAYASUが不要になる
-         左: TAGAYASU去る cx=50（小さめ）
-         右: チーム3人 cx=200,170,230
-         余白: x=90〜130
-         viewBox: 300 × 130
-    ══════════════════════════════ -->
+    <!-- ══ STEP 5 ══ -->
     <div class="step reveal">
+
       <div class="step-pict">
         <svg width="300" height="130" viewBox="0 0 300 130" fill="none" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round">
-
-          <!-- ── TAGAYASU（去る・小さめ・弾んだ歩き） cx=46 ── -->
-          <!-- 小さめ: r=9, stroke=2 -->
+          <!-- TAGAYASU（去る・小さめ）cx=46 -->
           <circle cx="46" cy="30" r="9" stroke="#9A9080" stroke-width="2"/>
-          <!-- 体: y=39〜58 -->
           <line x1="46" y1="39" x2="46" y2="58" stroke="#9A9080" stroke-width="2"/>
-          <!-- 手を振る（右手上げ）: 腕y=48 -->
           <line x1="46" y1="48" x2="30" y2="40" stroke="#9A9080" stroke-width="2"/>
-          <!-- 左腕（振り払う方向へ） -->
           <line x1="46" y1="48" x2="62" y2="38" stroke="#9A9080" stroke-width="2"/>
-          <!-- 弾んだ足（歩行ポーズ）: 右足前、左足後ろ -->
           <line x1="46" y1="58" x2="36" y2="78" stroke="#9A9080" stroke-width="2"/>
           <line x1="46" y1="58" x2="58" y2="76" stroke="#9A9080" stroke-width="2"/>
-          <!-- 吹き出し「では！」: 頭右上 -->
-          <!-- 矩形: x=58,y=12, w=44,h=22, rx=4 -->
+          <!-- 吹き出し -->
           <rect x="58" y="12" width="44" height="22" rx="4" stroke="#9A9080" stroke-width="1.5" fill="white"/>
-          <!-- しっぽ: 矩形左下から頭へ -->
           <polygon points="60,34 56,34 60,28" fill="white" stroke="#9A9080" stroke-width="1.5" stroke-linejoin="round"/>
           <text x="80" y="27" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="10" fill="#9A9080">では！</text>
-          <!-- ラベル -->
           <text x="46" y="100" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="9" fill="#9A9080">TAGAYASU</text>
 
-          <!-- ── 意図的な余白 x=106〜140 ── -->
+          <!-- 意図的余白 -->
 
-          <!-- ── チーム中央人 cx=196, r=12 ── -->
+          <!-- チーム中央人 cx=196 r=12 -->
           <circle cx="196" cy="24" r="12" stroke="#3B5E3A" stroke-width="2.2"/>
           <line x1="196" y1="36" x2="196" y2="62" stroke="#3B5E3A" stroke-width="2.2"/>
-          <!-- 腕: 両側の人へ向けて広げる -->
           <line x1="196" y1="46" x2="172" y2="38" stroke="#3B5E3A" stroke-width="2.2"/>
           <line x1="196" y1="46" x2="220" y2="38" stroke="#3B5E3A" stroke-width="2.2"/>
           <line x1="196" y1="62" x2="184" y2="84" stroke="#3B5E3A" stroke-width="2.2"/>
           <line x1="196" y1="62" x2="208" y2="84" stroke="#3B5E3A" stroke-width="2.2"/>
 
-          <!-- ── チーム左人 cx=162, r=10 ── -->
+          <!-- チーム左人 cx=162 r=10 -->
           <circle cx="162" cy="28" r="10" stroke="#3B5E3A" stroke-width="2"/>
           <line x1="162" y1="38" x2="162" y2="62" stroke="#3B5E3A" stroke-width="2"/>
           <line x1="162" y1="48" x2="146" y2="40" stroke="#3B5E3A" stroke-width="2"/>
@@ -479,7 +548,7 @@ body::before{
           <line x1="162" y1="62" x2="152" y2="82" stroke="#3B5E3A" stroke-width="2"/>
           <line x1="162" y1="62" x2="172" y2="82" stroke="#3B5E3A" stroke-width="2"/>
 
-          <!-- ── チーム右人 cx=230, r=10 ── -->
+          <!-- チーム右人 cx=230 r=10 -->
           <circle cx="230" cy="28" r="10" stroke="#3B5E3A" stroke-width="2"/>
           <line x1="230" y1="38" x2="230" y2="62" stroke="#3B5E3A" stroke-width="2"/>
           <line x1="230" y1="48" x2="214" y2="42" stroke="#3B5E3A" stroke-width="2"/>
@@ -487,42 +556,58 @@ body::before{
           <line x1="230" y1="62" x2="220" y2="82" stroke="#3B5E3A" stroke-width="2"/>
           <line x1="230" y1="62" x2="240" y2="82" stroke="#3B5E3A" stroke-width="2"/>
 
-          <!-- ── 芽: チーム3人の中央(cx=196)の足元から上へ ── -->
-          <!-- 茎: y=62〜48 -->
+          <!-- 芽（中央足元）-->
           <line x1="196" y1="62" x2="196" y2="48" stroke="#3B5E3A" stroke-width="2"/>
-          <!-- 左葉 -->
           <path d="M196 54 Q186 48 184 40" stroke="#3B5E3A" stroke-width="1.8" fill="none"/>
-          <!-- 右葉 -->
           <path d="M196 50 Q206 44 208 36" stroke="#3B5E3A" stroke-width="1.8" fill="none"/>
-          <!-- 先端: 小円 -->
           <circle cx="196" cy="46" r="3" fill="#3B5E3A"/>
 
-          <!-- ラベル -->
           <text x="196" y="100" text-anchor="middle" font-family="'Zen Maru Gothic',sans-serif" font-size="10" fill="#3B5E3A">チーム</text>
 
-          <!-- ＋マーク（成長の象徴）: 右端 cx=272, cy=50 -->
-          <line x1="264" y1="50" x2="280" y2="50" stroke="#3B5E3A" stroke-width="2"/>
-          <line x1="272" y1="42" x2="272" y2="58" stroke="#3B5E3A" stroke-width="2"/>
-
+          <!-- ＋ cx=270,cy=50 -->
+          <line x1="262" y1="50" x2="278" y2="50" stroke="#3B5E3A" stroke-width="2"/>
+          <line x1="270" y1="42" x2="270" y2="58" stroke="#3B5E3A" stroke-width="2"/>
         </svg>
       </div>
+
       <span class="step-label">5. THE GOAL</span>
       <h2 class="step-title">TAGAYASUが<br>不要になる。</h2>
       <p class="step-note">（これがゴール）</p>
+
+      <div class="step-body-content">
+        <p>TAGAYASUのゴールは、あなたの組織がTAGAYASUを必要としなくなることです。</p>
+        <p>自走できるチームができたとき、TAGAYASUはそっと手を離します。「では！」と軽やかに。</p>
+        <div class="callout">
+          🌱 「依存させない支援」がTAGAYASUの哲学です。<br>
+          支援が終わったとき、あなたの組織は自分の足で立っています。
+        </div>
+      </div>
     </div>
 
   </div><!-- /steps -->
 
+  <!-- ABOUT -->
+  <div class="about-mini reveal">
+    <div class="about-mini-logo">
+      <img src="https://tagayasu-lab.jp/wp-content/uploads/2024/06/TAGAYASU_icon_240606.png" alt="大竹泰和">
+    </div>
+    <div>
+      <div class="about-mini-name">大竹 泰和</div>
+      <div class="about-mini-role">Human Warmth Lab TAGAYASU 代表</div>
+      <div class="about-mini-body">「人が育つ組織をつくる」を一貫したテーマに、中小企業の経営者と現場をつなぐ対話型支援を行っています。</div>
+    </div>
+  </div>
+
   <!-- CTA -->
   <div class="final-cta reveal">
-    <span class="cta-eyebrow">まずは一歩</span>
-    <h3 class="cta-title">「どう頼めばいいのか」が<br>わかるところから始めます。</h3>
-    <p class="cta-note">あなたの「願い」を、ていねいに受け取ります。</p>
+    <span class="cta-hand">まずここから</span>
+    <h3 class="cta-title">「なんとなく気になる」が<br><em>最高のスタートライン</em>です。</h3>
+    <p class="cta-body">5分の診断か、30分の無料対話から始めましょう。どちらも費用ゼロ、勧誘もゼロです。</p>
     <div class="btn-group">
-      <a href="https://nukumol-heart-pulse.base44.app" class="btn-sub">心の温度を測る（無料）</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScEFfXFfKyE3T7yUnRMcr9At9bQ2U_KexdwOyojYYZD7DoMUg/viewform" class="btn-main">メールで相談する（無料）</a>
+      <a href="https://nukumol-heart-pulse.base44.app" class="btn-sub" target="_blank" rel="noopener">Nukumolで診断する（5分・無料）</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScEFfXFfKyE3T7yUnRMcr9At9bQ2U_KexdwOyojYYZD7DoMUg/viewform" class="btn-main" target="_blank" rel="noopener">話してみる（30分・無料）</a>
     </div>
-    <span class="cta-free">○ Nukumol 心の温度診断　無料　○ お話しだけ　無料　○ 無理な勧誘　なし</span>
+    <span class="cta-free">○ 診断無料　○ 対話無料　○ 勧誘なし</span>
   </div>
 
 </div><!-- /page -->
@@ -537,7 +622,7 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if(e.isIntersecting){ e.target.classList.add('in'); observer.unobserve(e.target); }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.1 });
 revealEls.forEach(el => observer.observe(el));
 </script>
 </body>
