@@ -36,8 +36,11 @@ body{
 }
 
 /* ─────────── SCROLL ANIMATION ─────────── */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease;}
-.reveal.visible{opacity:1;transform:none;}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;pointer-events:none;}
+/* ヒーロー内は最初から表示 */
+.hero .reveal{opacity:1;transform:none;pointer-events:auto;}
+
+.reveal.visible{opacity:1;transform:none;pointer-events:auto;}
 
 /* ─────────── NAV ─────────── */
 .nav{
@@ -1597,25 +1600,28 @@ function nkPct(temp){
 
 // ── Scroll reveal ──
 (function(){
-  var items = document.querySelectorAll('.reveal');
-  // ページ読み込み時に既に画面内にある要素（hero等）は即座にvisibleに
-  function activate(el){
-    el.classList.add('visible');
-  }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){ activate(e.target); io.unobserve(e.target); }
+  function initReveal(){
+    var items = document.querySelectorAll('.reveal');
+    function activate(el){ el.classList.add('visible'); }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ activate(e.target); io.unobserve(e.target); }
+      });
+    }, {threshold:0.05, rootMargin:'0px 0px -5% 0px'});
+    items.forEach(function(el){
+      var rect = el.getBoundingClientRect();
+      if(rect.top < window.innerHeight + 10 && rect.bottom > 0){
+        setTimeout(function(){ activate(el); }, 80);
+      } else {
+        io.observe(el);
+      }
     });
-  }, {threshold:0.05, rootMargin:'0px 0px -5% 0px'});
-  items.forEach(function(el){
-    var rect = el.getBoundingClientRect();
-    if(rect.top < window.innerHeight && rect.bottom > 0){
-      // 既に画面内にある要素は遅延付きで即表示
-      setTimeout(function(){ activate(el); }, 120);
-    } else {
-      io.observe(el);
-    }
-  });
+  }
+  if(document.readyState === 'complete'){
+    setTimeout(initReveal, 50);
+  } else {
+    window.addEventListener('load', function(){ setTimeout(initReveal, 50); });
+  }
 })();
 
 // ── ページトップボタン 表示制御 ──
