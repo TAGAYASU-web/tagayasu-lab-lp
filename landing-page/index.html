@@ -1091,18 +1091,34 @@ body{
           &#x1F321; 心の温度を測ってみる（無料）
         </a>
       </div>
-      <div class="nk-thermo reveal">
-        <span style="font-family:var(--font-ui);font-size:11px;letter-spacing:.22em;color:var(--teal);margin-bottom:8px;display:block;">あなたの組織の今の温度</span>
-        <div class="nk-thermo-temp">36<span>°C</span></div>
-        <div style="font-size:13px;color:rgba(255,255,255,.88);margin-bottom:20px;">少し冷えています。耕し時です。</div>
-        <div class="nk-scale">
-          <div class="nk-scale-dot"></div>
+      <div class="nk-vthermo reveal">
+        <div class="nk-tube-wrap">
+          <div class="nk-tube-top-temp" id="nkTubeTemp">36<span>°C</span></div>
+          <div class="nk-tube">
+            <div class="nk-tube-inner">
+              <div class="nk-tube-fill" id="nkTubeFill"></div>
+            </div>
+            <div class="nk-tube-marker" id="nkTubeMarker"></div>
+          </div>
+          <div class="nk-tube-bulb"></div>
         </div>
-        <div class="nk-scale-labels">
-          <span>34°C<br>冬</span>
-          <span>35°C<br>秋</span>
-          <span>36.5°C<br>春</span>
-          <span>37.5°C<br>夏</span>
+        <div class="nk-tube-labels">
+          <div class="nk-tube-tick nk-tick-ss">
+            <div class="nk-tube-tick-line major"></div>
+            <div><div class="nk-tube-tick-temp">37.5°C</div><div class="nk-tube-tick-name">夏</div></div>
+          </div>
+          <div class="nk-tube-tick nk-tick-au">
+            <div class="nk-tube-tick-line"></div>
+            <div><div class="nk-tube-tick-temp">36.5°C</div><div class="nk-tube-tick-name">春</div></div>
+          </div>
+          <div class="nk-tube-tick nk-tick-su">
+            <div class="nk-tube-tick-line"></div>
+            <div><div class="nk-tube-tick-temp">35°C</div><div class="nk-tube-tick-name">秋</div></div>
+          </div>
+          <div class="nk-tube-tick nk-tick-sp">
+            <div class="nk-tube-tick-line major"></div>
+            <div><div class="nk-tube-tick-temp">34°C</div><div class="nk-tube-tick-name">冬</div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1548,6 +1564,35 @@ function nkPct(temp){
     current = Math.min(current + STEP, TARGET);
     update2(current);
     if(current >= TARGET) clearInterval(timer2);
+  }, INTERVAL);
+})();
+
+// ── Nukumol 縦型温度計 アニメ ──
+(function(){
+  var elTemp   = document.getElementById('nkTubeTemp');
+  var elFill   = document.getElementById('nkTubeFill');
+  var elMarker = document.getElementById('nkTubeMarker');
+  if(!elFill) return;
+
+  var TARGET  = 36.3;
+  var current = 34.0;
+  var STEP    = 0.05;
+  var INTERVAL= 60;
+
+  function pct(val){ return Math.min(100, Math.max(0, (val-34.0)/(37.5-34.0)*100)); }
+
+  function update(val){
+    var p = pct(val);
+    if(elFill)  { elFill.style.height = p.toFixed(1) + '%'; }
+    if(elMarker){ elMarker.style.top  = (100 - p).toFixed(1) + '%'; }
+    if(elTemp)  { elTemp.innerHTML = Math.round(val*10)/10 + '<span>°C</span>'; }
+  }
+
+  update(current);
+  var timer = setInterval(function(){
+    current = Math.min(current + STEP, TARGET);
+    update(current);
+    if(current >= TARGET) clearInterval(timer);
   }, INTERVAL);
 })();
 
