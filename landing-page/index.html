@@ -795,6 +795,57 @@ body{
   </style>
 </section>
 
+
+<!-- ══ HERO THERMO ══ -->
+<section id="hero-thermo" style="background:linear-gradient(160deg,#1c2820 0%,#243428 55%,#1e2c24 100%);padding:clamp(64px,10vw,100px) clamp(24px,7vw,100px);">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center;">
+
+    <!-- 左：テキスト -->
+    <div class="reveal">
+      <span style="font-family:var(--font-ui);font-size:11px;letter-spacing:.38em;color:var(--teal);display:block;margin-bottom:16px;">組織の今を、数値で見る</span>
+      <h2 style="font-family:var(--font-serif);font-size:clamp(22px,2.8vw,36px);font-weight:800;color:#fff;line-height:1.55;margin-bottom:18px;">
+        あなたの組織の<br>心の温度は、<br>
+        <em style="color:var(--gold-lt);font-style:normal;">今、何度ですか？</em>
+      </h2>
+      <p style="font-family:var(--font-body);font-size:14px;color:rgba(255,255,255,.8);line-height:2.1;margin-bottom:28px;">
+        「なんとなく噛み合わない」「会議が静かになってきた」<br>
+        そんな感覚は、組織の温度が下がっているサインかもしれません。<br><br>
+        Nukumolは、その「見えない状態」を34〜37.5℃の数値で可視化する、TAGAYASUオリジナルの診断ツールです。
+      </p>
+      <a href="https://nukumol-heart-pulse.base44.app" target="_blank" rel="noopener"
+        style="display:inline-flex;align-items:center;gap:10px;background:rgba(126,190,171,.14);border:1px solid rgba(126,190,171,.38);color:var(--teal);font-family:var(--font-ui);font-size:13px;font-weight:500;padding:13px 22px;text-decoration:none;letter-spacing:.08em;transition:background .2s;">
+        🌡️ 心の温度を測ってみる（無料）
+      </a>
+    </div>
+
+    <!-- 右：温度計ビジュアル -->
+    <div class="reveal" style="display:flex;flex-direction:column;align-items:center;gap:18px;">
+      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(126,190,171,.2);padding:32px 36px;width:100%;max-width:320px;text-align:center;">
+        <span style="font-family:var(--font-ui);font-size:10px;letter-spacing:.22em;color:var(--teal);margin-bottom:12px;display:block;">あなたの組織の心の温度</span>
+        <div style="font-family:var(--font-serif);font-size:68px;font-weight:800;color:#fff;line-height:1;" id="thermoNum2">—</div>
+        <span style="font-family:var(--font-ui);font-size:11px;color:rgba(255,255,255,.42);margin-top:8px;display:block;letter-spacing:.12em;">Nukumol 心の温度診断</span>
+      </div>
+      <!-- スケール -->
+      <div style="width:100%;max-width:320px;">
+        <div style="height:8px;border-radius:4px;background:linear-gradient(90deg,#4a9a88 0%,#7ebeab 35%,var(--gold-lt) 65%,#e07060 100%);position:relative;margin-bottom:8px;">
+          <div id="scaleDot2" style="position:absolute;top:50%;transform:translate(-50%,-50%);width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--gold);left:2%;transition:left 1.8s ease;"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-family:var(--font-ui);font-size:10px;color:rgba(255,255,255,.36);letter-spacing:.1em;">
+          <span>34°C 冬</span><span>35°C 秋</span><span>36.5°C 春</span><span>37.5°C 夏</span>
+        </div>
+      </div>
+      <div style="background:rgba(128,104,48,.12);border:1px solid rgba(128,104,48,.26);padding:10px 18px;font-family:var(--font-ui);font-size:11px;color:var(--gold-lt);letter-spacing:.1em;text-align:center;width:100%;max-width:320px;">
+        心の土をあたため、眠る力を芽吹かせる
+      </div>
+    </div>
+
+  </div>
+  <style>
+  @media(max-width:768px){
+    #hero-thermo > div{ grid-template-columns:1fr!important;gap:36px!important; }
+  }
+  </style>
+</section>
 <!-- ══ PAIN ══ -->
 <section class="sec pain-bg">
   <div class="sec-inner">
@@ -1020,54 +1071,42 @@ body{
 </section>
 
 <!-- ══ NUKUMOL ══ -->
-<section id="hero-thermo" style="background:linear-gradient(160deg,#1c2820 0%,#243428 55%,#1e2c24 100%);padding:clamp(64px,10vw,100px) clamp(24px,7vw,100px);">
-  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center;">
-
-    <!-- 左：テキスト -->
-    <div class="reveal">
-      <span style="font-family:var(--font-ui);font-size:11px;letter-spacing:.38em;color:var(--teal);display:block;margin-bottom:16px;">組織の今を、数値で見る</span>
-      <h2 style="font-family:var(--font-serif);font-size:clamp(22px,2.8vw,36px);font-weight:800;color:#fff;line-height:1.55;margin-bottom:18px;">
-        あなたの組織の<br>心の温度は、<br>
-        <em style="color:var(--gold-lt);font-style:normal;">今、何度ですか？</em>
-      </h2>
-      <p style="font-family:var(--font-body);font-size:14px;color:rgba(255,255,255,.8);line-height:2.1;margin-bottom:28px;">
-        「なんとなく噛み合わない」「会議が静かになってきた」<br>
-        そんな感覚は、組織の温度が下がっているサインかもしれません。<br><br>
-        Nukumolは、その「見えない状態」を34〜37.5℃の数値で可視化する、TAGAYASUオリジナルの診断ツールです。
-      </p>
-      <a href="https://nukumol-heart-pulse.base44.app" target="_blank" rel="noopener"
-        style="display:inline-flex;align-items:center;gap:10px;background:rgba(126,190,171,.14);border:1px solid rgba(126,190,171,.38);color:var(--teal);font-family:var(--font-ui);font-size:13px;font-weight:500;padding:13px 22px;text-decoration:none;letter-spacing:.08em;transition:background .2s;">
-        🌡️ 心の温度を測ってみる（無料）
-      </a>
-    </div>
-
-    <!-- 右：温度計ビジュアル -->
-    <div class="reveal" style="display:flex;flex-direction:column;align-items:center;gap:18px;">
-      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(126,190,171,.2);padding:32px 36px;width:100%;max-width:320px;text-align:center;">
-        <span style="font-family:var(--font-ui);font-size:10px;letter-spacing:.22em;color:var(--teal);margin-bottom:12px;display:block;">あなたの組織の心の温度</span>
-        <div style="font-family:var(--font-serif);font-size:68px;font-weight:800;color:#fff;line-height:1;" id="thermoNum2">—</div>
-        <span style="font-family:var(--font-ui);font-size:11px;color:rgba(255,255,255,.42);margin-top:8px;display:block;letter-spacing:.12em;">Nukumol 心の温度診断</span>
+<section class="sec nk-bg" id="nukumol">
+  <div class="sec-inner">
+    <div class="nk-inner">
+      <div>
+        <span class="nk-label reveal">無料で試せる診断ツール</span>
+        <h2 class="nk-title reveal">
+          Nukumol<span class="nk-badge">BETA</span><br>心の温度診断
+        </h2>
+        <p class="nk-body reveal">
+          「今の組織、何が問題なの？」をまず数値で可視化します。<br>
+          Nukumolは、組織の心理的安全性・対話量・理念浸透度などを<br>
+          「心の温度（℃）」として表示する、TAGAYASUオリジナルの診断ツールです。<br><br>
+          ベータ版として無料公開中。<br>
+          「開発中のツールを一緒に試してみませんか？」<br>
+          ──その一歩から、対話が始まります。
+        </p>
+        <a href="https://nukumol-heart-pulse.base44.app" target="_blank" rel="noopener" class="nk-url reveal">
+          &#x1F321; 心の温度を測ってみる（無料）
+        </a>
       </div>
-      <!-- スケール -->
-      <div style="width:100%;max-width:320px;">
-        <div style="height:8px;border-radius:4px;background:linear-gradient(90deg,#4a9a88 0%,#7ebeab 35%,var(--gold-lt) 65%,#e07060 100%);position:relative;margin-bottom:8px;">
-          <div id="scaleDot2" style="position:absolute;top:50%;transform:translate(-50%,-50%);width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--gold);left:2%;transition:left 1.8s ease;"></div>
+      <div class="nk-thermo reveal">
+        <span style="font-family:var(--font-ui);font-size:11px;letter-spacing:.22em;color:var(--teal);margin-bottom:8px;display:block;">あなたの組織の今の温度</span>
+        <div class="nk-thermo-temp">36<span>°C</span></div>
+        <div style="font-size:13px;color:rgba(255,255,255,.88);margin-bottom:20px;">少し冷えています。耕し時です。</div>
+        <div class="nk-scale">
+          <div class="nk-scale-dot"></div>
         </div>
-        <div style="display:flex;justify-content:space-between;font-family:var(--font-ui);font-size:10px;color:rgba(255,255,255,.36);letter-spacing:.1em;">
-          <span>34°C 冬</span><span>35°C 秋</span><span>36.5°C 春</span><span>37.5°C 夏</span>
+        <div class="nk-scale-labels">
+          <span>34°C<br>冬</span>
+          <span>35°C<br>秋</span>
+          <span>36.5°C<br>春</span>
+          <span>37.5°C<br>夏</span>
         </div>
       </div>
-      <div style="background:rgba(128,104,48,.12);border:1px solid rgba(128,104,48,.26);padding:10px 18px;font-family:var(--font-ui);font-size:11px;color:var(--gold-lt);letter-spacing:.1em;text-align:center;width:100%;max-width:320px;">
-        心の土をあたため、眠る力を芽吹かせる
-      </div>
     </div>
-
   </div>
-  <style>
-  @media(max-width:768px){
-    #hero-thermo > div{ grid-template-columns:1fr!important;gap:36px!important; }
-  }
-  </style>
 </section>
 
 
