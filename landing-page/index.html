@@ -613,7 +613,7 @@ body{
 }
 
 .about-photo-img{width:100%;flex:1;min-height:460px;object-fit:cover;object-position:center 20%;display:block;}
-.about-avatar-caption{background:#1a1a1a;color:#c9a84c;text-align:center;padding:16px 24px;font-size:13px;letter-spacing:.14em;font-weight:600;flex-shrink:0;}
+.about-avatar-caption{position:relative;height:120px;overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;} .about-avatar-caption::before{content:'';position:absolute;inset:0;background:url('https://media.base44.com/images/public/6a0cff8c3d378afffc65f50e/7bc4d8218_PXL_20251022_MP.jpg') center 60%/cover no-repeat;filter:brightness(.45);} .about-avatar-caption span{position:relative;z-index:1;color:#c9a84c;font-size:13px;letter-spacing:.14em;font-weight:600;}
 .about-avatar-logo{
   width:80px;height:80px;border-radius:50%;overflow:hidden;
 }
@@ -1131,8 +1131,8 @@ body{
     <h2 class="sec-title reveal">心の耕し人</h2>
     <div class="about-inner">
       <div class="about-avatar reveal">
-        <img src="https://media.base44.com/images/public/6a0cff8c3d378afffc65f50e/7bc4d8218_PXL_20251022_MP.jpg" alt="代表 大竹 泰和" class="about-photo-img">
-        <div class="about-avatar-caption">代表 ─ 心の耕し人</div>
+        <img src="https://base44.app/api/apps/6a0cff8c3d378afffc65f50e/files/mp/public/6a0cff8c3d378afffc65f50e/132cf9a52_9b30999e6_17617041060662.jpg" alt="代表 大竹 泰和" class="about-photo-img">
+        <div class="about-avatar-caption"><span>代表 ─ 心の耕し人</span></div>
       </div>
       <div class="about-text reveal">
         <div class="about-name-block">
