@@ -646,7 +646,7 @@ body{
 .faq-list{margin-top:48px;max-width:760px;}
 .faq-item{border-bottom:1px solid rgba(128,104,48,.15);}
 .faq-q{
-  display:flex;justify-content:space-between;align-items:flex-start;
+  display:flex;justify-content:flex-start;align-items:flex-start;
   padding:22px 0;cursor:pointer;gap:16px;
   font-family:var(--font-serif);font-size:15px;font-weight:700;
   color:var(--charcoal);line-height:1.6;list-style:none;
@@ -654,7 +654,7 @@ body{
 .faq-q::before{content:'Q.';color:var(--gold);font-size:13px;flex-shrink:0;margin-top:2px;}
 .faq-q::after{
   content:'+';font-family:var(--font-ui);font-size:20px;font-weight:300;
-  color:var(--gold);flex-shrink:0;transition:transform .2s;
+  color:var(--gold);flex-shrink:0;margin-left:auto;transition:transform .2s;
 }
 .faq-item.open .faq-q::after{transform:rotate(45deg);}
 .faq-a{
