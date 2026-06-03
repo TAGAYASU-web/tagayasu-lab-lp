@@ -688,18 +688,19 @@ body{
 
 /* ── SCROLL-TO-TOP ── */
 .scroll-top{
-  position:fixed;bottom:32px;right:32px;
-  width:48px;height:48px;border-radius:50%;
+  position:fixed;bottom:40px;right:28px;
+  width:52px;height:52px;border-radius:50%;
   background:var(--gold);color:var(--white);
   border:none;cursor:pointer;font-size:16px;
   display:flex;align-items:center;justify-content:center;
-  opacity:0;transform:translateY(16px) scale(.85);
-  transition:opacity .35s cubic-bezier(.4,0,.2,1),transform .35s cubic-bezier(.4,0,.2,1);
-  z-index:999;box-shadow:0 4px 16px rgba(128,104,48,.45);
+  opacity:0;transform:translateY(20px) scale(.85);
+  transition:opacity .4s cubic-bezier(.4,0,.2,1),transform .4s cubic-bezier(.4,0,.2,1);
+  z-index:999;box-shadow:0 4px 20px rgba(128,104,48,.55);
 }
-.scroll-top.show{opacity:1;transform:translateY(0) scale(1);}
-.scroll-top:hover{background:#6a5628;transform:translateY(-3px) scale(1.08);}
-.scroll-top svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+.scroll-top.show{opacity:1;transform:translateY(0) scale(1);animation:topbtn-pulse 2.8s ease-in-out 1s infinite;}
+.scroll-top:hover{background:#6a5628;transform:translateY(-3px) scale(1.10);animation:none;}
+.scroll-top svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+@keyframes topbtn-pulse{0%,100%{box-shadow:0 4px 20px rgba(128,104,48,.55);}50%{box-shadow:0 4px 28px rgba(128,104,48,.85);}}
 
 /* ── 下へスクロール矢印 ── */
 .scroll-down{
@@ -965,6 +966,7 @@ body{
       </div>
     </div>
   </div>
+<div style="text-align:right;padding:0 clamp(16px,5vw,60px) 28px;"><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;letter-spacing:.12em;color:var(--gold,#b8933a);text-decoration:none;opacity:.75;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.75'"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>PAGE TOP</a></div>
 </section>
 
 
@@ -1010,6 +1012,7 @@ body{
       </a>
     </div>
   </div>
+<div style="text-align:right;padding:0 clamp(16px,5vw,60px) 28px;"><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;letter-spacing:.12em;color:var(--gold,#b8933a);text-decoration:none;opacity:.75;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.75'"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>PAGE TOP</a></div>
 </section>
 
 
@@ -1070,6 +1073,7 @@ body{
       耕す365をもっと読む（note）→
     </a>
   </div>
+<div style="text-align:right;padding:0 clamp(16px,5vw,60px) 28px;"><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;letter-spacing:.12em;color:var(--gold,#b8933a);text-decoration:none;opacity:.75;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.75'"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>PAGE TOP</a></div>
 </section>
 
 <!-- ══ NUKUMOL ══ -->
@@ -1125,6 +1129,7 @@ body{
       </div>
     </div>
   </div>
+<div style="text-align:right;padding:0 clamp(16px,5vw,60px) 28px;"><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;letter-spacing:.12em;color:var(--gold,#b8933a);text-decoration:none;opacity:.75;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.75'"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>PAGE TOP</a></div>
 </section>
 
 
@@ -1167,6 +1172,7 @@ body{
       </div>
     </div>
   </div>
+<div style="text-align:right;padding:0 clamp(16px,5vw,60px) 28px;"><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;letter-spacing:.12em;color:var(--gold,#b8933a);text-decoration:none;opacity:.75;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.75'"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>PAGE TOP</a></div>
 </section>
 
 <!-- ══ MENU ══ -->
@@ -1355,6 +1361,7 @@ body{
 
     </div>
   </div>
+<div style="text-align:right;padding:0 clamp(16px,5vw,60px) 28px;"><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;letter-spacing:.12em;color:var(--gold,#b8933a);text-decoration:none;opacity:.75;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.75'"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>PAGE TOP</a></div>
 </section>
 
 <!-- ══ FIRST STEP ══ -->
@@ -1435,6 +1442,7 @@ body{
       </div>
     </div>
   </div>
+<div style="text-align:right;padding:0 clamp(16px,5vw,60px) 28px;"><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;letter-spacing:.12em;color:var(--gold,#b8933a);text-decoration:none;opacity:.75;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.75'"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>PAGE TOP</a></div>
 </section>
 
 
@@ -1606,7 +1614,7 @@ function nkPct(temp){
   var btn = document.getElementById('scrollTop');
   if(!btn) return;
   function checkScroll(){
-    if(window.scrollY > 400){
+    if(window.scrollY > 300){
       btn.classList.add('show');
     } else {
       btn.classList.remove('show');
