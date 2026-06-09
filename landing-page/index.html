@@ -1526,12 +1526,167 @@ body{
     <a href="https://nukumol-heart-pulse.base44.app" target="_blank" class="footer-link">Nukumol 心の温度診断</a>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScEFfXFfKyE3T7yUnRMcr9At9bQ2U_KexdwOyojYYZD7DoMUg/viewform" target="_blank" rel="noopener" class="footer-link">お問い合わせ</a>
     <a href="https://tagayasu-lab.jp" class="footer-link">tagayasu-lab.jp</a>
+    <a href="#" onclick="document.getElementById('pp-modal').classList.add('pp-open');return false;" class="footer-link">プライバシーポリシー</a>
   </div>
   <div style="font-family:var(--font-ui);font-size:11px;color:var(--gold);letter-spacing:.15em;margin-bottom:12px;">
     土になろう。まず、いっぽ。
   </div>
   <p class="footer-copy">© 2026 Human Warmth Lab TAGAYASU 大竹 泰和</p>
 </footer>
+
+<!-- ══ PRIVACY POLICY MODAL ══ -->
+<style>
+/* ── PP モーダル ── */
+#pp-modal{
+  display:none;position:fixed;inset:0;z-index:9999;
+  background:rgba(10,18,12,.72);
+  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+  align-items:center;justify-content:center;padding:16px;
+}
+#pp-modal.pp-open{display:flex;}
+.pp-box{
+  background:#faf9f4;border-radius:6px;
+  width:100%;max-width:720px;max-height:90vh;
+  display:flex;flex-direction:column;
+  box-shadow:0 20px 60px rgba(0,0,0,.35);
+  overflow:hidden;
+}
+.pp-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 28px;border-bottom:1px solid rgba(138,106,40,.2);
+  background:#fff;flex-shrink:0;
+}
+.pp-header-title{
+  font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;
+  color:#2a3a2d;letter-spacing:.06em;
+}
+.pp-header-sub{
+  font-size:11px;color:#888;letter-spacing:.08em;margin-top:2px;
+}
+.pp-close{
+  background:none;border:none;cursor:pointer;
+  width:36px;height:36px;display:flex;align-items:center;justify-content:center;
+  color:#888;font-size:20px;border-radius:50%;transition:background .2s;
+  flex-shrink:0;
+}
+.pp-close:hover{background:rgba(0,0,0,.08);}
+.pp-body{
+  overflow-y:auto;padding:28px;
+  font-family:'Noto Sans JP',sans-serif;font-size:15px;
+  line-height:1.85;color:#3a3a3a;
+  -webkit-overflow-scrolling:touch;
+}
+.pp-body h3{
+  font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;
+  color:#2a3a2d;margin:28px 0 10px;border-left:3px solid #b8933a;padding-left:10px;
+}
+.pp-body p{margin:0 0 14px;}
+.pp-body ol,.pp-body ul{margin:0 0 14px;padding-left:22px;}
+.pp-body li{margin-bottom:6px;}
+.pp-body strong{color:#2a3a2d;}
+.pp-body a{color:#8a6a28;text-decoration:underline;}
+.pp-footer-bar{
+  padding:16px 28px;border-top:1px solid rgba(138,106,40,.2);
+  background:#fff;text-align:center;flex-shrink:0;
+}
+.pp-footer-bar button{
+  background:#b8933a;color:#fff;border:none;cursor:pointer;
+  font-family:'Noto Sans JP',sans-serif;font-size:13px;letter-spacing:.1em;
+  padding:12px 36px;border-radius:2px;transition:background .2s;
+}
+.pp-footer-bar button:hover{background:#9a7a2e;}
+@media(max-width:600px){
+  .pp-box{max-height:95vh;border-radius:4px;}
+  .pp-body{font-size:14px;padding:20px 16px;line-height:1.8;}
+  .pp-header{padding:16px 18px;}
+  .pp-footer-bar{padding:12px 16px;}
+}
+</style>
+
+<div id="pp-modal" role="dialog" aria-modal="true" aria-label="プライバシーポリシー">
+  <div class="pp-box">
+    <div class="pp-header">
+      <div>
+        <div class="pp-header-title">個人情報保護方針（プライバシーポリシー）</div>
+        <div class="pp-header-sub">PRIVACY POLICY — Human Warmth Lab TAGAYASU</div>
+      </div>
+      <button class="pp-close" onclick="document.getElementById('pp-modal').classList.remove('pp-open');return false;" aria-label="閉じる">✕</button>
+    </div>
+    <div class="pp-body">
+      <p>Human Warmth Lab TAGAYASU（以下、「当方」といいます。）は、当方が提供するウェブサイト（https://tagayasu-lab.jp/）および組織温度診断システム「Nukumol」（https://nukumol-heart-pulse.base44.app）（以下、総称して「本サービス」といいます。）における、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。</p>
+      <p>当方は、皆様からお預かりした情報を単なる「数字」や「データ」ではなく、組織を耕し、豊かな関係性を育むための大切な「種」として慎重に扱い、厳重に管理することをお約束いたします。</p>
+
+      <h3>第1条（個人情報の定義）</h3>
+      <p>本ポリシーにおいて「個人情報」とは、個人情報保護法にいう「個人情報」を指すものとし、生存する個人に関する情報であって、当該情報に含まれる氏名、会社名、役職、メールアドレス、LINEユーザーID、その他の記述等により特定の個人を識別できる情報を指します。</p>
+
+      <h3>第2条（個人情報の収集方法と対象データ）</h3>
+      <p>当方は、本サービスにおいて、以下の方法でお客様の情報を取得いたします。</p>
+      <ol>
+        <li><strong>お問い合わせ・お申し込み：</strong>氏名、会社名、役職、メールアドレス、電話番号等、入力フォームに記載された情報。</li>
+        <li><strong>公式LINEアカウント：</strong>友だち登録時に取得するユーザー識別子、およびチャットボットやメッセージを通じたやり取りの情報。</li>
+        <li><strong>組織温度診断（Nukumol）の利用：</strong>組織の状態や心理的安全性に関する設問への回答データ、およびそれに基づき算出された診断結果スコア。</li>
+        <li><strong>アクセス情報の収集：</strong>本サービスの利便性向上のため、クッキー（Cookie）やサーバーログ等のアクセス履歴情報。</li>
+      </ol>
+
+      <h3>第3条（個人情報の利用目的）</h3>
+      <p>当方は、収集した個人情報を以下の目的のために利用いたします。</p>
+      <ol>
+        <li>本サービス（Nukumol診断等）における診断結果の算出、分析、および顧客企業へのレポート提供のため</li>
+        <li>お客様からのお問い合わせ、ご相談、モニター応募等に対する対応および返答のため</li>
+        <li>本サービスに関する情報提供、およびTAGAYASUの活動（セミナー、新サービス等）に関するご案内のため</li>
+        <li>本サービスの品質向上および改善のための利用動向分析のため</li>
+        <li>その他、上記に付随する目的のため</li>
+      </ol>
+
+      <h3>第4条（個人情報の第三者提供）</h3>
+      <p>当方は、次の場合を除いて、お客様の個人情報を第三者に提供することはありません。</p>
+      <ol>
+        <li>法令に基づく場合</li>
+        <li>人の生命、身体または財産の保護のために必要がある場合</li>
+        <li>公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合</li>
+        <li>国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合</li>
+        <li>お客様の事前の同意がある場合</li>
+      </ol>
+      <p>なお、<strong>Nukumol診断における回答データは、個人が特定できる形での第三者（依頼元企業を含む）への提供は一切行いません。</strong>集計・分析したスコアのみを、事前に合意した範囲で組織全体の傾向として提供します。</p>
+
+      <h3>第5条（個人情報の管理）</h3>
+      <p>当方は、収集した個人情報を適切に管理し、個人情報への不正アクセス、紛失、破損、改ざん、漏洩等を防止するため、合理的な安全管理措置を講じます。本サービスは、Base44プラットフォームおよびGoogle Workspaceのセキュリティ基準に準拠した環境で運営されています。</p>
+
+      <h3>第6条（Cookieおよびアクセス解析ツールについて）</h3>
+      <p>本ウェブサイトでは、サービス改善のためにGoogle Analytics等のアクセス解析ツールを使用することがあります。これらのツールはCookieを使用してデータを収集しますが、個人を特定する情報は収集しません。Cookieの使用はブラウザの設定で無効化することができます。</p>
+
+      <h3>第7条（お客様の権利）</h3>
+      <p>お客様は、当方が保有するご自身の個人情報について、開示・訂正・追加・削除・利用停止・消去・第三者提供の停止を請求する権利を有しています。ご請求の場合は、下記の問い合わせ窓口までご連絡ください。合理的な期間内に対応いたします。</p>
+
+      <h3>第8条（プライバシーポリシーの変更）</h3>
+      <p>当方は、法令の改正やサービス内容の変更等に伴い、本ポリシーを変更することがあります。重要な変更がある場合は、本ウェブサイト上でお知らせします。変更後のポリシーは、本ページに掲載した時点から効力を生じるものとします。</p>
+
+      <h3>第9条（お問い合わせ）</h3>
+      <p>本ポリシーに関するお問い合わせは、下記窓口までご連絡ください。</p>
+      <p>
+        <strong>Human Warmth Lab TAGAYASU</strong><br>
+        代表：大竹 泰和<br>
+        メール：<a href="mailto:hirokazu.otake@tagayasu-lab.jp">hirokazu.otake@tagayasu-lab.jp</a><br>
+        ウェブ：<a href="https://tagayasu-lab.jp" target="_blank">https://tagayasu-lab.jp</a>
+      </p>
+      <p style="margin-top:28px;font-size:13px;color:#888;">制定日：2026年6月9日</p>
+    </div>
+    <div class="pp-footer-bar">
+      <button onclick="document.getElementById('pp-modal').classList.remove('pp-open');">閉じる</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// モーダル外クリックで閉じる
+document.getElementById('pp-modal').addEventListener('click', function(e){
+  if(e.target === this) this.classList.remove('pp-open');
+});
+// ESCキーで閉じる
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') document.getElementById('pp-modal').classList.remove('pp-open');
+});
+</script>
 
 <script>
 // ── NUKUMOL 6段階定義（アプリ準拠） ──
