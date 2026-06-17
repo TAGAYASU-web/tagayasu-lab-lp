@@ -567,16 +567,35 @@ body{
   display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
   gap:2px;background:rgba(128,104,48,.3);margin-top:56px;
 }
+/* 耕す365 曜日別 6カード グリッド */
+.phil-grid-365{
+  grid-template-columns:repeat(3,1fr);
+}
+@media(max-width:900px){.phil-grid-365{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.phil-grid-365{grid-template-columns:1fr;}}
 .phil-card{
   background:rgba(255,255,255,.22);padding:36px 28px;
   border-top:2px solid rgba(200,168,80,.5);
   transition:border-color .25s,background .25s;
   cursor:default;
 }
-.phil-card:hover{border-top-color:var(--gold-lt);background:rgba(255,255,255,.25);}
-.phil-date{font-family:var(--font-ui);font-size:10px;letter-spacing:.25em;color:var(--gold-lt);margin-bottom:12px;display:block;}
+.phil-card:hover{background:rgba(255,255,255,.27);}
+/* 曜日アクセントカラー */
+.phil-card-mon{border-top-color:#6aab7a;}
+.phil-card-mon:hover{border-top-color:#8acc9a;}
+.phil-card-tue{border-top-color:#c9a55a;}
+.phil-card-tue:hover{border-top-color:#e0b96a;}
+.phil-card-wed{border-top-color:#6a9ab0;}
+.phil-card-wed:hover{border-top-color:#8ab8cc;}
+.phil-card-thu{border-top-color:#8ab06a;}
+.phil-card-thu:hover{border-top-color:#a0c87a;}
+.phil-card-fri{border-top-color:#c07a5a;}
+.phil-card-fri:hover{border-top-color:#d8926a;}
+.phil-card-wknd{border-top-color:#b08898;}
+.phil-card-wknd:hover{border-top-color:#c8a0b0;}
+.phil-date{font-family:var(--font-ui);font-size:10px;letter-spacing:.18em;color:var(--gold-lt);margin-bottom:12px;display:block;}
 .phil-verb{font-family:var(--font-serif);font-size:17px;font-weight:700;color:#ffffff;margin-bottom:10px;text-shadow:0 1px 2px rgba(0,0,0,.3);}
-.phil-body{font-family:var(--font-body);font-size:13px;color:rgba(255,255,255,.96);line-height:1.9;}
+.phil-body{font-family:var(--font-body);font-size:13px;color:rgba(255,255,255,.9);line-height:1.9;}
 .phil-more{
   display:inline-block;margin-top:36px;
   font-family:var(--font-ui);font-size:12px;letter-spacing:.2em;
@@ -1026,57 +1045,54 @@ body{
 <section class="phil-section">
   <div class="phil-inner">
     <span class="sec-label" style="color:var(--gold);" class="reveal">耕す365</span>
-    <h2 class="sec-title reveal" style="color:var(--white);">毎日、一つの気づきを<br>あなたの現場へ。</h2>
+    <h2 class="sec-title reveal" style="color:var(--white);">毎日、一粒の種を届ける。</h2>
     <p class="sec-lead reveal" style="color:rgba(255,255,255,.88);">
-      大竹泰和が日々綴る「耕す365」は、<br>
-      経営者の朝に、一粒の種を蒔き続ける言葉の畑です。
+      人も、組織も、一日では変わらない。でも、毎日少しずつ耕せば、必ず土壌は柔らかくなる。<br>
+      大竹泰和が日々の現場・暮らし・学びから紡ぐ連載。月曜から日曜まで、それぞれの曜日に届く言葉がある。
     </p>
 
-    <div class="phil-grid">
-      <div class="phil-card reveal">
-        <span class="phil-date">1 / 2　祈る</span>
-        <div class="phil-verb">覚悟の種を蒔く</div>
-        <p class="phil-body">祈るとは、願いを外に投げることではなく、自分自身の「覚悟」に火を灯すこと。揺るぎない自分を信じることから、すべての物語は芽吹き始める。</p>
+    <div class="phil-grid phil-grid-365">
+
+      <div class="phil-card phil-card-mon reveal">
+        <span class="phil-date">月曜 ｜ Instagram 毎週月曜 朝</span>
+        <div class="phil-verb">経営者の"コ"を耕す</div>
+        <p class="phil-body">孤独。孤立。固執。枯渇。困惑。経営者だけが抱える、言葉にならない内面の状態に、TAGAYASUは名前をつける。5つの「負のコ」を耕し、やがて恍惚・鼓動・好奇心・貢献という「正のコ」へ。</p>
       </div>
-      <div class="phil-card reveal">
-        <span class="phil-date">1 / 6　見極める</span>
-        <div class="phil-verb">核心に光を当てる</div>
-        <p class="phil-body">忙しい日々の中で、何が本質かを見失っているとき、自分と相手の心の核心に目を向けること。それこそが、限りある人生という時間を、最も豊かに育む。</p>
+
+      <div class="phil-card phil-card-tue reveal">
+        <span class="phil-date">火曜 ｜ Instagram 毎週火曜 朝</span>
+        <div class="phil-verb">人づくりの栄養学</div>
+        <p class="phil-body">日々の学びは、そのままでは「情報」に過ぎない。でも、自分に問い直した瞬間に、「栄養」になる。語っていることを生きているか。知っていることをやっているか。</p>
       </div>
-      <div class="phil-card reveal">
-        <span class="phil-date">1 / 7　向き合う</span>
-        <div class="phil-verb">目の前の命を愛する</div>
-        <p class="phil-body">無心とは、真っさらな生き物としての素直な心のこと。どんな状況であれ、今、目の前にいる人に精一杯尽くす。その積み重ねが、深い信頼という豊かな土壌を創り上げる。</p>
+
+      <div class="phil-card phil-card-wed reveal">
+        <span class="phil-date">水曜 ｜ note 毎週水曜 朝</span>
+        <div class="phil-verb">我が家のような我が社のつくり方</div>
+        <p class="phil-body">「我が家のような我が社をつくりたい。」ある経営者が、コーヒーを一口飲んで、静かに言った。土壌を耕すことでしか、生まれない。あなたの組織の土壌について、一緒に考えたい。</p>
       </div>
-      <div class="phil-card reveal">
-        <span class="phil-date">1 / 10　帰る</span>
-        <div class="phil-verb">本来の自分に還る</div>
-        <p class="phil-body">日々、私たちは何かに追われ、自分を見失いがち。しかし、心静かに立ち止まれば、人はいつでも「本来あるべき姿」へ帰ることができる。そこにこそ、あなただけの氣づきが眠っている。</p>
+
+      <div class="phil-card phil-card-thu reveal">
+        <span class="phil-date">木曜 ｜ Instagram 毎週木曜 朝</span>
+        <div class="phil-verb">森と子どもたちと経営学</div>
+        <p class="phil-body">園舎のない森のようちえんには、用意されたおもちゃが一つもない。子どもが育つ場と、人が育つ場は、同じ土壌の上にある。人は守られて育つのではなく、挑戦できる安心感の中で育つ。</p>
       </div>
-      <div class="phil-card reveal">
-        <span class="phil-date">1 / 11　休める</span>
-        <div class="phil-verb">芽吹くための余白</div>
-        <p class="phil-body">ずっと動いていては、大切なことを見逃してしまう。あえて立ち止まり、呼吸を整えて座ってみる。休むことは怠惰ではなく、新たな芽を育むために不可欠な、創造のプロセス。</p>
+
+      <div class="phil-card phil-card-fri reveal">
+        <span class="phil-date">金曜 ｜ Instagram 毎週金曜 朝</span>
+        <div class="phil-verb">マナビの現場</div>
+        <p class="phil-body">企業訪問・対話・ファシリテーション。大竹泰和が実際に立った「現場」の記録。美しくまとめない。うまくいった話だけを書かない。「この人は、今日も現場にいる。」その事実だけが、信頼の土壌になる。</p>
       </div>
-      <div class="phil-card reveal">
-        <span class="phil-date">1 / 13　譲る</span>
-        <div class="phil-verb">循環を生み出す</div>
-        <p class="phil-body">自分が抱え込んでいるだけでは、世界は広がらない。勇気を持って誰かに譲ってみること。手放すことで初めて、これまで想像もしなかった新たな創造の風が吹く。</p>
+
+      <div class="phil-card phil-card-wknd reveal">
+        <span class="phil-date">土・日 ｜ Instagram 毎週末</span>
+        <div class="phil-verb">耕し暮らし</div>
+        <p class="phil-body">台所の時間、畑の時間、つながりの時間。仕事でも、経営でも、会社でもない暮らしの時間の中に、土壌の根っこがある。「知行合一」——知っていることと、やっていることの一致。</p>
       </div>
-      <div class="phil-card reveal">
-        <span class="phil-date">1 / 14　二択で考えない</span>
-        <div class="phil-verb">対立を越えて</div>
-        <p class="phil-body">二択は常に争いを生む。対立の構図に縛られず、相手を尊重し、調和の道を探ること。莫妄想（まくもうぞう）。今、目の前にある「なすべきこと」にだけ心を集中する。</p>
-      </div>
-      <div class="phil-card reveal">
-        <span class="phil-date">1 / 19　綴る</span>
-        <div class="phil-verb">経験を価値に変える</div>
-        <p class="phil-body">日々の断片を書き綴ることで、「自分軸」という根っこが太くなる。言葉を整えることは、感情を整えること。そうして整理されたあなたの経験は、誰かを温めるための光へと変わる。</p>
-      </div>
+
     </div>
 
-    <a href="https://note.com" target="_blank" rel="noopener" class="phil-more reveal">
-      耕す365をもっと読む（note）→
+    <a href="https://tagayasu-lab.jp/howto/" class="phil-more reveal">
+      耕す365 連載一覧を見る →
     </a>
   </div>
 <div style="text-align:right;padding:0 clamp(16px,5vw,60px) 28px;"><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;letter-spacing:.12em;color:var(--gold,#b8933a);text-decoration:none;opacity:.75;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.75'"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>PAGE TOP</a></div>
