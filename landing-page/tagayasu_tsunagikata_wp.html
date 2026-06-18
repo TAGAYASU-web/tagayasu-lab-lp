@@ -1,0 +1,688 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAGAYASUへのつなぎ方 | Human Warmth Lab TAGAYASU</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+  :root {
+    --bg: #F1EFE8;
+    --bg-card: #FFFFFF;
+    --soil: #2C2C2A;
+    --soil-soft: #5F5E5A;
+    --soil-faint: #888780;
+    --line: #DAD7CC;
+    --accent: #8C6A3F;       /* 土の温かい褐色 */
+    --accent-soft: #EFE6D8;  /* 種の薄い色 */
+    --green: #5B6E4D;        /* 葉の緑 */
+    --green-soft: #E7ECDF;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--soil);
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.9;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .serif {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  img, svg { display: block; max-width: 100%; }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Nav ---------- */
+  .nav {
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .nav-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+  }
+  .nav-link {
+    font-size: 12px;
+    color: var(--soil-soft);
+    border: 1px solid var(--line);
+    padding: 6px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 72px 0 56px;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--soil-faint);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: 26px;
+    line-height: 1.55;
+    color: var(--soil);
+    margin-bottom: 28px;
+  }
+  .hero-sub {
+    font-size: 13px;
+    color: var(--soil-soft);
+    line-height: 1.9;
+  }
+
+  /* signature illustration: a hand passing a single seed */
+  .seed-pass {
+    width: 220px;
+    margin: 0 auto 32px;
+  }
+
+  /* ---------- Section base ---------- */
+  section {
+    padding: 56px 0;
+    border-top: 1px solid var(--line);
+  }
+  section.no-border { border-top: none; }
+
+  .label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .label::before {
+    content: '';
+    width: 14px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  h2 {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  p { font-size: 14.5px; color: var(--soil-soft); margin-bottom: 16px; }
+  p:last-child { margin-bottom: 0; }
+  p strong { color: var(--soil); font-weight: 500; }
+
+  /* ---------- Reveal: secret explained ---------- */
+  .reveal-illust {
+    width: 150px;
+    margin: 0 auto 4px;
+  }
+  .reveal-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 28px 26px;
+    margin-top: 24px;
+  }
+  .reveal-quote {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    color: var(--soil);
+    line-height: 2;
+    padding-left: 18px;
+    border-left: 2px solid var(--accent);
+  }
+
+  /* ---------- "you are already" ---------- */
+  .role-block {
+    text-align: center;
+    padding: 12px 0 4px;
+  }
+  .role-illust { width: 130px; margin: 0 auto 24px; }
+  .role-block h2 { font-size: 19px; }
+
+  /* ---------- Whisper prompt: faces ---------- */
+  .whisper-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 28px 0 8px;
+  }
+  .whisper-line {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    color: var(--soil);
+    background: var(--accent-soft);
+    border-radius: 3px;
+    padding: 16px 20px;
+    line-height: 1.8;
+  }
+  .whisper-question {
+    text-align: center;
+    margin: 32px 0 8px;
+    font-size: 15px;
+    color: var(--soil);
+  }
+  .whisper-note {
+    text-align: center;
+    font-size: 13px;
+    color: var(--soil-soft);
+    margin-bottom: 0;
+  }
+
+  /* ---------- Copy cards ---------- */
+  .copy-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 22px 22px 18px;
+    margin-bottom: 16px;
+  }
+  .copy-card:last-child { margin-bottom: 0; }
+  .copy-card-label {
+    font-size: 11px;
+    color: var(--soil-faint);
+    margin-bottom: 10px;
+    letter-spacing: 0.04em;
+  }
+  .copy-card-text {
+    font-size: 14px;
+    color: var(--soil);
+    line-height: 1.85;
+    margin-bottom: 16px;
+  }
+  .copy-btn {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12.5px;
+    color: var(--accent);
+    background: transparent;
+    border: 1px solid var(--accent);
+    padding: 7px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .copy-btn:hover { background: var(--accent); color: #fff; }
+  .copy-btn.done { background: var(--green); color: #fff; border-color: var(--green); }
+
+  /* ---------- Risk-free reassurance ---------- */
+  .seed-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px 0 28px;
+  }
+  .reassure-box {
+    background: var(--green-soft);
+    border-radius: 4px;
+    padding: 24px 24px;
+    text-align: center;
+  }
+  .reassure-box p { color: var(--soil); margin-bottom: 10px; }
+  .reassure-box .small { font-size: 12.5px; color: var(--soil-soft); }
+
+  /* ---------- Ura-bome explainer (the loop) ---------- */
+  .loop-illust {
+    width: 280px;
+    margin: 12px auto 32px;
+  }
+
+  /* ---------- Audience cards ---------- */
+  .aud-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .aud-card {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 20px 22px;
+    background: var(--bg-card);
+  }
+  .aud-card .serif {
+    font-size: 15px;
+    color: var(--soil);
+    margin-bottom: 6px;
+    display: block;
+  }
+  .aud-card p { font-size: 13px; margin-bottom: 0; }
+
+  /* ---------- Final actions ---------- */
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .action-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 22px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--bg-card);
+  }
+  .action-row .t {
+    font-size: 13.5px;
+    color: var(--soil);
+  }
+  .action-row .t span {
+    display: block;
+    font-size: 11.5px;
+    color: var(--soil-faint);
+    margin-top: 3px;
+  }
+  .action-arrow {
+    font-size: 13px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .action-row.primary {
+    background: var(--soil);
+  }
+  .action-row.primary .t { color: var(--bg); }
+  .action-row.primary .t span { color: #ABA89C; }
+  .action-row.primary .action-arrow { color: var(--accent-soft); }
+
+  /* ---------- Footer ---------- */
+  footer {
+    padding: 48px 0 64px;
+    text-align: center;
+  }
+  footer .sig {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 13px;
+    color: var(--soil);
+    margin-bottom: 4px;
+  }
+  footer .org {
+    font-size: 11.5px;
+    color: var(--soil-faint);
+  }
+
+  @media (max-width: 520px) {
+    .hero h1 { font-size: 22px; }
+    .action-row { flex-direction: row; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">TAGAYASU</div>
+    <a class="nav-link" href="#actions">まずはここから</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero wrap">
+  <div class="hero-eyebrow">TAGAYASUへのつなぎ方</div>
+
+  <!-- hero: two pictogram figures, one offering a seed upward, one receiving with open arms -->
+  <svg class="seed-pass" viewBox="0 0 220 148" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+
+    <!-- ground line -->
+    <path d="M8 136 Q110 144 212 136" stroke="#DAD7CC" stroke-width="1.8" stroke-linecap="round"/>
+
+    <!-- ── LEFT FIGURE: seed held high overhead ── -->
+    <!-- head -->
+    <circle cx="56" cy="38" r="16" stroke="#5B6E4D" stroke-width="2.6" fill="#E7ECDF"/>
+    <!-- torso -->
+    <path d="M56 54 L56 102" stroke="#5B6E4D" stroke-width="2.6" stroke-linecap="round"/>
+    <!-- right arm raised high, straight up -->
+    <path d="M56 64 L80 34" stroke="#5B6E4D" stroke-width="2.6" stroke-linecap="round"/>
+    <!-- left arm angled down (confident stance) -->
+    <path d="M56 64 L34 82" stroke="#5B6E4D" stroke-width="2.6" stroke-linecap="round"/>
+    <!-- legs, wide and planted -->
+    <path d="M56 102 L40 136" stroke="#5B6E4D" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M56 102 L72 136" stroke="#5B6E4D" stroke-width="2.6" stroke-linecap="round"/>
+
+    <!-- seed held overhead -->
+    <circle cx="86" cy="24" r="11" fill="#5B6E4D"/>
+    <!-- sprout on top of seed -->
+    <path d="M86 13 V4" stroke="#5B6E4D" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M86 9 C82 7, 80 3, 82 0" stroke="#5B6E4D" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    <path d="M86 7 C90 5, 92 1, 90 -1" stroke="#5B6E4D" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    <!-- radiate lines around seed (energy) -->
+    <path d="M86 11 V3" stroke="#8C6A3F" stroke-width="1.6" stroke-linecap="round" opacity="0"/>
+    <path d="M98 18 L104 12" stroke="#8C6A3F" stroke-width="2" stroke-linecap="round"/>
+    <path d="M98 30 L106 28" stroke="#8C6A3F" stroke-width="2" stroke-linecap="round"/>
+    <path d="M74 18 L68 12" stroke="#8C6A3F" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- motion arc from seed to right figure -->
+    <path d="M97 24 Q140 8 162 30" stroke="#C4BFAF" stroke-width="1.8"
+          stroke-dasharray="4 6" stroke-linecap="round" fill="none"/>
+    <!-- arrowhead -->
+    <path d="M157 25 L164 31 L157 37"
+          stroke="#C4BFAF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+    <!-- ── RIGHT FIGURE: arms wide open, welcoming ── -->
+    <!-- head -->
+    <circle cx="166" cy="40" r="16" stroke="#8C6A3F" stroke-width="2.6" fill="#EFE6D8"/>
+    <!-- torso -->
+    <path d="M166 56 L166 104" stroke="#8C6A3F" stroke-width="2.6" stroke-linecap="round"/>
+    <!-- left arm reaching up-left to receive -->
+    <path d="M166 66 L144 36" stroke="#8C6A3F" stroke-width="2.6" stroke-linecap="round"/>
+    <!-- right arm spread wide out to the right -->
+    <path d="M166 66 L196 56" stroke="#8C6A3F" stroke-width="2.6" stroke-linecap="round"/>
+    <!-- legs -->
+    <path d="M166 104 L150 136" stroke="#8C6A3F" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M166 104 L182 136" stroke="#8C6A3F" stroke-width="2.6" stroke-linecap="round"/>
+
+    <!-- small sprout at right figure's feet — what grows from receiving -->
+    <path d="M186 136 L186 122" stroke="#5B6E4D" stroke-width="2.2" stroke-linecap="round"/>
+    <circle cx="181" cy="118" r="6" fill="#5B6E4D"/>
+    <circle cx="191" cy="114" r="6" fill="#5B6E4D"/>
+  </svg>
+
+  <h1>あなたが今していることに、<br>もう名前がついています。</h1>
+  <p class="hero-sub">誰かの顔が浮かんだ。<br>それだけで、もう十分です。</p>
+</header>
+
+<main>
+
+  <!-- ============ 種明かし ============ -->
+  <section class="wrap no-border">
+    <div class="label">まず、種明かしから</div>
+    <h2>このページは、<br>「紹介してください」と<br>お願いするページではありません。</h2>
+    <p>TAGAYASUには、こんな思想があります。</p>
+
+    <svg class="reveal-illust" viewBox="0 0 150 95" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- ground -->
+      <path d="M6 80 Q75 88 144 80" stroke="#DAD7CC" stroke-width="1.3" stroke-linecap="round"/>
+
+      <!-- person A, pictogram style -->
+      <circle cx="32" cy="38" r="11" fill="#E7ECDF" stroke="#5B6E4D" stroke-width="1.8"/>
+      <path d="M32 49 C24 52, 20 60, 22 74" stroke="#5B6E4D" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+      <!-- person B, pictogram style -->
+      <circle cx="70" cy="40" r="11" fill="#F1EFE8" stroke="#8C8779" stroke-width="1.8"/>
+      <path d="M70 51 C78 54, 82 62, 80 74" stroke="#8C8779" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+      <!-- speech bubble from person A, pointing toward the empty chair -->
+      <path d="M10 8 h54 a5 5 0 0 1 5 5 v12 a5 5 0 0 1 -5 5 h-20 l-7 7 v-7 h-27 a5 5 0 0 1 -5 -5 v-12 a5 5 0 0 1 5 -5 Z"
+            fill="#FFFFFF" stroke="#5B6E4D" stroke-width="1.4"/>
+      <text x="37" y="22" text-anchor="middle" font-size="8.5" fill="#5B6E4D" font-family="Noto Serif JP, serif">頑張ってるよね</text>
+
+      <!-- empty chair pictogram, representing the absent person being praised -->
+      <path d="M114 48 V64 M130 48 V64 M114 48 H130 M111 64 H133 M114 56 H130" stroke="#C9C4B4" stroke-width="2" stroke-linecap="round"/>
+      <text x="122" y="80" text-anchor="middle" font-size="8" fill="#ABA89C" font-family="Noto Sans JP, sans-serif">（いない誰か）</text>
+    </svg>
+
+    <div class="reveal-card">
+      <p class="reveal-quote">仲間のことを、<br>その人がいないところで褒める。<br>それが日常的にできる組織には、<br>同じ志の仲間が集まる。</p>
+    </div>
+
+    <p style="margin-top:24px;">これを「うら褒め」と呼んでいます。</p>
+    <p>そして今、あなたがしようとしていること——<br>誰かに「TAGAYASUって、いいよ」と伝えること——</p>
+    <p><strong>それは、TAGAYASUに対する、うら褒めです。</strong></p>
+    <p>このページは、その行為に、<br>名前と、土壌を用意するためだけに存在します。</p>
+  </section>
+
+  <!-- ============ あなたはもう耕す人 ============ -->
+  <section class="wrap role-block">
+    <svg class="role-illust" viewBox="0 0 130 110" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- ground -->
+      <path d="M6 98 Q65 106 124 98" stroke="#DAD7CC" stroke-width="1.4" stroke-linecap="round"/>
+
+      <!-- person, pictogram-style: round head + simple crouching body -->
+      <circle cx="40" cy="30" r="12" fill="#E7ECDF" stroke="#5B6E4D" stroke-width="1.8"/>
+      <!-- torso, bent forward (crouching) -->
+      <path d="M40 42 C28 46, 22 56, 26 68 L34 80" stroke="#5B6E4D" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <!-- arm reaching down to watering can -->
+      <path d="M40 50 C50 52, 58 50, 64 46" stroke="#5B6E4D" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <!-- legs, crouched -->
+      <path d="M34 80 C30 88, 24 90, 18 96" stroke="#5B6E4D" stroke-width="2" stroke-linecap="round"/>
+      <path d="M34 80 C40 88, 46 90, 50 96" stroke="#5B6E4D" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- watering can, simplified pictogram shape -->
+      <rect x="62" y="40" width="16" height="13" rx="3" fill="#EFE6D8" stroke="#8C6A3F" stroke-width="1.8"/>
+      <path d="M78 44 L88 40" stroke="#8C6A3F" stroke-width="1.8" stroke-linecap="round"/>
+      <!-- water drops -->
+      <circle cx="92" cy="48" r="1.6" fill="#A9C0E0"/>
+      <circle cx="97" cy="54" r="1.6" fill="#A9C0E0"/>
+      <circle cx="92" cy="60" r="1.6" fill="#A9C0E0"/>
+
+      <!-- the sprout being watered -->
+      <ellipse cx="92" cy="94" rx="12" ry="3" fill="#EFE6D8"/>
+      <path d="M92 94 V76" stroke="#5B6E4D" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="86" cy="70" r="5" fill="#5B6E4D"/>
+      <circle cx="98" cy="68" r="5" fill="#5B6E4D"/>
+    </svg>
+    <h2>あなたは、もう<br>「耕す人」です。</h2>
+    <p>TAGAYASUの投稿を読んで、<br>誰かの顔が思い浮かんだなら。</p>
+    <p>その瞬間、あなたはもう<br><strong>TAGAYASUの土壌を広げる、一人の耕し手</strong>です。</p>
+    <p>紹介者、という重い言葉ではなく。<br>ただ、誰かの孤独に、土を一粒落とした人。</p>
+  </section>
+
+  <!-- ============ 仕掛け① 誰の顔が浮かびましたか ============ -->
+  <section class="wrap">
+    <div class="label">仕掛け ①</div>
+    <h2>「誰の顔が<br>浮かびましたか」</h2>
+    <p>下の言葉を、声に出さず、<br>心の中で読んでみてください。</p>
+
+    <div class="whisper-list">
+      <div class="whisper-line">理念を語るほど、<br>社員が静かになる。</div>
+      <div class="whisper-line">我が家のような我が社を<br>つくりたい。</div>
+      <div class="whisper-line">「どうせ言っても変わらない」と<br>言ったのは、一番可能性のある<br>若手だった。</div>
+    </div>
+
+    <p class="whisper-question">今、誰かの顔が浮かびましたか。</p>
+    <p class="whisper-note">浮かんだなら——その人はもう、<br>つながれるのを待っています。</p>
+  </section>
+
+  <!-- ============ 仕掛け② 最初の一言 ============ -->
+  <section class="wrap">
+    <div class="label">仕掛け ②</div>
+    <h2>迷わなくていい<br>「最初の一言」</h2>
+    <p>何かを紹介する時、一番難しいのは<br>「なんと言えばいいか」です。</p>
+    <p>だから、最初の一言は、<br>すでに用意してあります。<br>そのままコピーして、送ってください。</p>
+
+    <div style="margin-top:28px;">
+
+      <div class="copy-card">
+        <div class="copy-card-label">経営者の知人に送る場合</div>
+        <div class="copy-card-text" id="text1">「最近見つけたんだけど、ちょっと変わった視点で組織を見ている人がいて。一回見てみて。」</div>
+        <button class="copy-btn" onclick="copyText('text1', this)">コピーする</button>
+      </div>
+
+      <div class="copy-card">
+        <div class="copy-card-label">経営者の集まりで話す場合</div>
+        <div class="copy-card-text" id="text2">「組織の問題を、施策じゃなくて土壌として見る人がいて。"経営者のコを耕す"って連載、ちょっと刺さるよ。」</div>
+        <button class="copy-btn" onclick="copyText('text2', this)">コピーする</button>
+      </div>
+
+      <div class="copy-card">
+        <div class="copy-card-label">TAGAYASU本人につなぐ場合</div>
+        <div class="copy-card-text" id="text3">「ちょっと話してみたい人がいるんだけど、紹介してもいい？」</div>
+        <button class="copy-btn" onclick="copyText('text3', this)">コピーする</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ 仕掛け③ リスクではなく贈り物 ============ -->
+  <section class="wrap">
+    <div class="label">仕掛け ③</div>
+    <h2>紹介は、<br>リスクではなく<br>「贈り物」になる。</h2>
+    <p>紹介をためらう理由は、<br>たいてい一つです。</p>
+    <p>「響かなかったら、気まずいかもしれない」</p>
+    <p>その心配を、なくしておきます。</p>
+
+    <div class="seed-divider">
+      <svg viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:60px;height:40px;">
+        <path d="M8 14 C6 10, 8 6, 12 6" stroke="#8C6A3F" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <ellipse cx="30" cy="16" rx="5" ry="7" fill="#5B6E4D"/>
+        <path d="M30 9 C30 4, 35 2, 38 4" stroke="#5B6E4D" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+        <path d="M52 14 C54 10, 52 6, 48 6" stroke="#8C6A3F" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M22 34 Q30 38 38 34" stroke="#DAD7CC" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M30 24 V30" stroke="#C9C4B4" stroke-width="1" stroke-dasharray="2 3"/>
+      </svg>
+    </div>
+
+    <div class="reassure-box">
+      <p>TAGAYASUは、誰かに<br>無理に売り込みません。</p>
+      <p>あなたがすることは、<br><strong>ただ種を一粒渡すこと</strong>だけ。</p>
+      <p class="small">芽が出るかどうかは、<br>TAGAYASUと、その人の間の話になります。<br>紹介の結果に、あなたは責任を持たなくていい。</p>
+    </div>
+  </section>
+
+  <!-- ============ うら褒めの入れ子（最重要） ============ -->
+  <section class="wrap">
+    <div class="label">つないでくださった方へ</div>
+    <h2>ここでお伝えしておきたい<br>こと</h2>
+
+    <svg class="loop-illust" viewBox="0 0 280 150" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- ground -->
+      <path d="M10 130 Q140 138 270 130" stroke="#DAD7CC" stroke-width="1.3" stroke-linecap="round"/>
+
+      <!-- LEFT SCENE: you, talking to a friend, about TAGAYASU (who is absent) -->
+      <circle cx="40" cy="58" r="11" fill="#E7ECDF" stroke="#5B6E4D" stroke-width="1.8"/>
+      <path d="M40 69 C32 72, 28 80, 30 96" stroke="#5B6E4D" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <circle cx="85" cy="60" r="11" fill="#F1EFE8" stroke="#8C8779" stroke-width="1.8"/>
+      <path d="M85 71 C92 74, 96 82, 94 96" stroke="#8C8779" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+      <path d="M18 28 h60 a6 6 0 0 1 6 6 v14 a6 6 0 0 1 -6 6 h-30 l-8 8 v-8 h-22 a6 6 0 0 1 -6 -6 v-14 a6 6 0 0 1 6 -6 Z"
+            fill="#FFFFFF" stroke="#5B6E4D" stroke-width="1.4"/>
+      <text x="48" y="46" text-anchor="middle" font-size="9" fill="#5B6E4D" font-family="Noto Serif JP, serif">TAGAYASUが…</text>
+      <text x="40" y="112" text-anchor="middle" font-size="9" fill="#5B6E4D" font-family="Noto Sans JP, sans-serif">あなた</text>
+      <text x="85" y="112" text-anchor="middle" font-size="9" fill="#8C8779" font-family="Noto Sans JP, sans-serif">知人</text>
+
+      <!-- divider -->
+      <path d="M140 20 V130" stroke="#DAD7CC" stroke-width="1" stroke-dasharray="2 5"/>
+      <text x="140" y="14" text-anchor="middle" font-size="9" fill="#ABA89C" font-family="Noto Sans JP, sans-serif">同時に、別の場所で</text>
+
+      <!-- RIGHT SCENE: TAGAYASU, talking to someone else, mentioning you (absent) -->
+      <circle cx="195" cy="58" r="11" fill="#EFE6D8" stroke="#8C6A3F" stroke-width="1.8"/>
+      <path d="M195 69 C187 72, 183 80, 185 96" stroke="#8C6A3F" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <circle cx="240" cy="60" r="11" fill="#F1EFE8" stroke="#8C8779" stroke-width="1.8"/>
+      <path d="M240 71 C247 74, 251 82, 249 96" stroke="#8C8779" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+      <path d="M173 28 h60 a6 6 0 0 1 6 6 v14 a6 6 0 0 1 -6 6 h-22 v8 l-8 -8 h-30 a6 6 0 0 1 -6 -6 v-14 a6 6 0 0 1 6 -6 Z"
+            fill="#FFFFFF" stroke="#8C6A3F" stroke-width="1.4"/>
+      <text x="203" y="46" text-anchor="middle" font-size="9" fill="#8C6A3F" font-family="Noto Serif JP, serif">あの人が…</text>
+      <text x="195" y="112" text-anchor="middle" font-size="9" fill="#8C6A3F" font-family="Noto Sans JP, sans-serif">TAGAYASU</text>
+      <text x="240" y="112" text-anchor="middle" font-size="9" fill="#8C8779" font-family="Noto Sans JP, sans-serif">誰か</text>
+
+      <!-- small seeds scattered along the ground -->
+      <circle cx="60" cy="128" r="3" fill="#5B6E4D" opacity="0.7"/>
+      <circle cx="220" cy="128" r="3" fill="#8C6A3F" opacity="0.7"/>
+    </svg>
+
+    <p>紹介してくださった方の名前を、<br>TAGAYASUは記憶しています。</p>
+    <p>ただし、それを大々的に<br>お礼として伝えることはしません。</p>
+    <p>なぜなら——</p>
+
+    <div class="reveal-card" style="margin-top:8px;">
+      <p class="reveal-quote">いない場所で、誰かを褒める。</p>
+    </div>
+
+    <p style="margin-top:24px;">それがTAGAYASUの思想だからです。</p>
+    <p>紹介してくださった方のことは、<br><strong>その方がいない場所で</strong>、<br>大竹泰和が静かに、誰かに話しています。</p>
+    <p>「あの人が、つなげてくれたんです」と。</p>
+    <p>それが、TAGAYASUからあなたへの、<br>うら褒めです。</p>
+  </section>
+
+  <!-- ============ つなぎ先の迷い ============ -->
+  <section class="wrap">
+    <div class="label">つなぎ先に迷ったら</div>
+    <h2>こんな人に、<br>特に届けてほしい</h2>
+
+    <div class="aud-grid">
+      <div class="aud-card">
+        <span class="serif">「我が家のような我が社」を<br>つくりたいと、ふと口にした人</span>
+        <p>売上の前に、社員の居場所を<br>気にかける経営者。</p>
+      </div>
+      <div class="aud-card">
+        <span class="serif">「なぜ伝わらないんだろう」と<br>つぶやいた人</span>
+        <p>理念や言葉に、違和感を<br>覚え始めている経営者。</p>
+      </div>
+      <div class="aud-card">
+        <span class="serif">会社の未来を、誰かに<br>渡すことを考え始めた人</span>
+        <p>承継や、次世代への引き継ぎを<br>意識し始めている経営者。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 今できること / Actions ============ -->
+  <section class="wrap" id="actions">
+    <div class="label">今、できること</div>
+    <h2>迷ったら、<br>これだけで十分です。</h2>
+    <p style="margin-bottom:28px;">① 上のどれか一つを、コピーする<br>② 顔が浮かんだ人に、そのまま送る<br>③ あとは、何もしなくていい</p>
+
+    <div class="actions">
+      <a class="action-row primary" href="https://docs.google.com/forms/d/e/1FAIpQLScEFfXFfKyE3T7yUnRMcr9At9bQ2U_KexdwOyojYYZD7DoMUg/viewform" target="_blank" rel="noopener">
+        <div class="t">TAGAYASUと直接つなぎたい場合<span>ご紹介・おつなぎのご相談</span></div>
+        <div class="action-arrow">→</div>
+      </a>
+      <a class="action-row" href="/howto/">
+        <div class="t">経営者ご本人が、まず知りたい場合<span>「つかい方」ページへ</span></div>
+        <div class="action-arrow">→</div>
+      </a>
+      <a class="action-row" href="/tagayasu365/">
+        <div class="t">まず、日々の言葉に触れてみたい場合<span>「耕す365」ページへ</span></div>
+        <div class="action-arrow">→</div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <div class="sig">大竹泰和 / 人づくりの土壌専門家</div>
+  <div class="org">Human Warmth Lab TAGAYASU</div>
+</footer>
+
+<script>
+  function copyText(id, btn) {
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const original = btn.textContent;
+      btn.textContent = 'コピーしました';
+      btn.classList.add('done');
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove('done');
+      }, 2000);
+    }).catch(() => {
+      btn.textContent = '手動でコピーしてください';
+    });
+  }
+</script>
+
+</body>
+</html>
+
+<!-- /wp:html -->
