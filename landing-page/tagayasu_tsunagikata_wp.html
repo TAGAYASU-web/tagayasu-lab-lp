@@ -369,17 +369,17 @@
     <path d="M56 102 L40 136" stroke="#5B6E4D" stroke-width="2.6" stroke-linecap="round"/>
     <path d="M56 102 L72 136" stroke="#5B6E4D" stroke-width="2.6" stroke-linecap="round"/>
 
-    <!-- seed held overhead -->
-    <circle cx="86" cy="24" r="11" fill="#5B6E4D"/>
-    <!-- sprout on top of seed -->
-    <path d="M86 13 V4" stroke="#5B6E4D" stroke-width="2.2" stroke-linecap="round"/>
-    <path d="M86 9 C82 7, 80 3, 82 0" stroke="#5B6E4D" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-    <path d="M86 7 C90 5, 92 1, 90 -1" stroke="#5B6E4D" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-    <!-- radiate lines around seed (energy) -->
-    <path d="M86 11 V3" stroke="#8C6A3F" stroke-width="1.6" stroke-linecap="round" opacity="0"/>
-    <path d="M98 18 L104 12" stroke="#8C6A3F" stroke-width="2" stroke-linecap="round"/>
-    <path d="M98 30 L106 28" stroke="#8C6A3F" stroke-width="2" stroke-linecap="round"/>
-    <path d="M74 18 L68 12" stroke="#8C6A3F" stroke-width="2" stroke-linecap="round"/>
+    <!-- seed held overhead: teardrop / seed shape -->
+    <!-- 種の形: 下が丸く上が尖った雫型 -->
+    <path d="M86 13 C80 16, 76 21, 76 26 C76 31, 80.5 35, 86 35 C91.5 35, 96 31, 96 26 C96 21, 92 16, 86 13 Z" fill="#5B6E4D"/>
+    <!-- 種の中心線（葉脈） -->
+    <path d="M86 16 L86 33" stroke="#E7ECDF" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+    <!-- 種の右側の葉脈 -->
+    <path d="M86 22 C89 21, 92 23, 93 26" stroke="#E7ECDF" stroke-width="1" stroke-linecap="round" opacity="0.4" fill="none"/>
+    <!-- 輝きライン（種のエネルギー） -->
+    <path d="M98 20 L104 14" stroke="#8C6A3F" stroke-width="2" stroke-linecap="round"/>
+    <path d="M99 31 L107 30" stroke="#8C6A3F" stroke-width="2" stroke-linecap="round"/>
+    <path d="M74 20 L68 14" stroke="#8C6A3F" stroke-width="2" stroke-linecap="round"/>
 
     <!-- motion arc from seed to right figure -->
     <path d="M97 24 Q140 8 162 30" stroke="#C4BFAF" stroke-width="1.8"
@@ -651,7 +651,7 @@
         <div class="t">経営者ご本人が、まず知りたい場合<span>「つかい方」ページへ</span></div>
         <div class="action-arrow">→</div>
       </a>
-      <a class="action-row" href="/tagayasu365/">
+      <a class="action-row" href="/tagayasu-365/">
         <div class="t">まず、日々の言葉に触れてみたい場合<span>「耕す365」ページへ</span></div>
         <div class="action-arrow">→</div>
       </a>
@@ -661,6 +661,10 @@
 </main>
 
 <footer class="wrap">
+  <a href="https://tagayasu-lab.jp/" style="display:inline-flex;align-items:center;gap:8px;font-family:'Noto Sans JP',sans-serif;font-size:12px;letter-spacing:.15em;color:var(--soil-faint);text-decoration:none;margin-bottom:20px;transition:color .2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--soil-faint)'">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    サイトトップへ戻る
+  </a>
   <div class="sig">大竹泰和 / 人づくりの土壌専門家</div>
   <div class="org">Human Warmth Lab TAGAYASU</div>
 </footer>
