@@ -82,31 +82,75 @@
 
   /* ---------- Hero ---------- */
   .hero {
-    padding: 72px 0 56px;
+    padding: 64px 0 56px;
     text-align: center;
   }
-  .hero-eyebrow {
+  .hero-page-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     font-size: 11px;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.25em;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid rgba(140,106,63,.18);
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 28px;
+    font-weight: 400;
+  }
+  .hero-page-label::before {
+    content: '';
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  .hero-title-kana {
+    font-size: 10px;
+    letter-spacing: 0.45em;
     color: var(--soil-faint);
-    margin-bottom: 18px;
+    display: block;
+    margin-bottom: 14px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
   }
   .hero h1 {
-    font-size: 26px;
-    line-height: 1.55;
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(28px, 6vw, 44px);
+    font-weight: 600;
+    line-height: 1.45;
     color: var(--soil);
-    margin-bottom: 28px;
+    letter-spacing: 0.03em;
+    margin-bottom: 20px;
+  }
+  .hero-catch {
+    font-size: clamp(14px, 2.5vw, 17px);
+    color: var(--soil-soft);
+    line-height: 2;
+    margin-bottom: 10px;
+    font-weight: 300;
+  }
+  .hero-catch strong {
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .hero-divider {
+    width: 36px;
+    height: 1px;
+    background: var(--line);
+    margin: 24px auto;
   }
   .hero-sub {
     font-size: 13px;
-    color: var(--soil-soft);
+    color: var(--soil-faint);
     line-height: 1.9;
   }
 
-  /* signature illustration: a hand passing a single seed */
+  /* signature illustration */
   .seed-pass {
-    width: 220px;
-    margin: 0 auto 32px;
+    width: 200px;
+    margin: 32px auto 36px;
   }
 
   /* ---------- Section base ---------- */
@@ -348,67 +392,61 @@
 
 <!-- ============ HERO ============ -->
 <header class="hero wrap">
-  <div class="hero-eyebrow">TAGAYASUへのつなぎ方</div>
 
-  <!-- hero: two pictogram figures, one offering a seed upward, one receiving with open arms -->
+  <!-- ページ識別バッジ -->
+  <div class="hero-page-label">TAGAYASUへのつなぎ方</div>
+
+  <!-- ルビ（英語読み） -->
+  <span class="hero-title-kana">TAGAYASU NO TSUNAGIKATA</span>
+
+  <!-- メインタイトル -->
+  <h1>あなたが今していることに、<br>もう名前がついています。</h1>
+
+  <!-- サブコピー -->
+  <p class="hero-catch">誰かの顔が浮かんだ。<br><strong>それだけで、もう十分です。</strong></p>
+
+  <div class="hero-divider"></div>
+
+  <!-- イラスト：種を渡す二人のピクトグラム -->
   <svg class="seed-pass" viewBox="0 0 220 148" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-
-    <!-- ground line -->
     <path d="M8 136 Q110 144 212 136" stroke="#DAD7CC" stroke-width="1.8" stroke-linecap="round"/>
 
-    <!-- ── LEFT FIGURE: seed held high overhead ── -->
-    <!-- head -->
+    <!-- 左の人：種を高く掲げる -->
     <circle cx="56" cy="38" r="16" stroke="#5B6E4D" stroke-width="2.6" fill="#E7ECDF"/>
-    <!-- torso -->
     <path d="M56 54 L56 102" stroke="#5B6E4D" stroke-width="2.6" stroke-linecap="round"/>
-    <!-- right arm raised high, straight up -->
     <path d="M56 64 L80 34" stroke="#5B6E4D" stroke-width="2.6" stroke-linecap="round"/>
-    <!-- left arm angled down (confident stance) -->
     <path d="M56 64 L34 82" stroke="#5B6E4D" stroke-width="2.6" stroke-linecap="round"/>
-    <!-- legs, wide and planted -->
     <path d="M56 102 L40 136" stroke="#5B6E4D" stroke-width="2.6" stroke-linecap="round"/>
     <path d="M56 102 L72 136" stroke="#5B6E4D" stroke-width="2.6" stroke-linecap="round"/>
 
-    <!-- seed held overhead: teardrop / seed shape (larger, clearly a seed) -->
-    <!-- 種の形: 上が尖り下が丸い、米粒/ひまわりの種型 cx=82, cy=22 -->
+    <!-- 種（雫型・葉脈入り） -->
     <path d="M82 10 C74 15, 72 22, 74 28 C76 34, 79 37, 82 37 C85 37, 88 34, 90 28 C92 22, 90 15, 82 10 Z" fill="#5B6E4D"/>
-    <!-- 種の縦の葉脈 -->
     <path d="M82 13 L82 35" stroke="#E7ECDF" stroke-width="1.4" stroke-linecap="round" opacity="0.55"/>
-    <!-- 種の右の葉脈 -->
     <path d="M82 20 C86 19, 88 22, 88 26" stroke="#E7ECDF" stroke-width="1.1" stroke-linecap="round" opacity="0.4" fill="none"/>
-    <!-- 輝きライン（種のエネルギー） -->
     <path d="M93 16 L99 10" stroke="#8C6A3F" stroke-width="2" stroke-linecap="round"/>
     <path d="M94 30 L101 30" stroke="#8C6A3F" stroke-width="2" stroke-linecap="round"/>
     <path d="M71 16 L65 10" stroke="#8C6A3F" stroke-width="2" stroke-linecap="round"/>
 
-    <!-- motion arc from seed to right figure -->
-    <path d="M97 24 Q140 8 162 30" stroke="#C4BFAF" stroke-width="1.8"
-          stroke-dasharray="4 6" stroke-linecap="round" fill="none"/>
-    <!-- arrowhead -->
-    <path d="M157 25 L164 31 L157 37"
-          stroke="#C4BFAF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- 種の軌跡 -->
+    <path d="M97 24 Q140 8 162 30" stroke="#C4BFAF" stroke-width="1.8" stroke-dasharray="4 6" stroke-linecap="round" fill="none"/>
+    <path d="M157 25 L164 31 L157 37" stroke="#C4BFAF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 
-    <!-- ── RIGHT FIGURE: arms wide open, welcoming ── -->
-    <!-- head -->
+    <!-- 右の人：両手で受け取る -->
     <circle cx="166" cy="40" r="16" stroke="#8C6A3F" stroke-width="2.6" fill="#EFE6D8"/>
-    <!-- torso -->
     <path d="M166 56 L166 104" stroke="#8C6A3F" stroke-width="2.6" stroke-linecap="round"/>
-    <!-- left arm reaching up-left to receive -->
     <path d="M166 66 L144 36" stroke="#8C6A3F" stroke-width="2.6" stroke-linecap="round"/>
-    <!-- right arm spread wide out to the right -->
     <path d="M166 66 L196 56" stroke="#8C6A3F" stroke-width="2.6" stroke-linecap="round"/>
-    <!-- legs -->
     <path d="M166 104 L150 136" stroke="#8C6A3F" stroke-width="2.6" stroke-linecap="round"/>
     <path d="M166 104 L182 136" stroke="#8C6A3F" stroke-width="2.6" stroke-linecap="round"/>
 
-    <!-- small sprout at right figure's feet — what grows from receiving -->
+    <!-- 足元の芽 -->
     <path d="M186 136 L186 122" stroke="#5B6E4D" stroke-width="2.2" stroke-linecap="round"/>
     <circle cx="181" cy="118" r="6" fill="#5B6E4D"/>
     <circle cx="191" cy="114" r="6" fill="#5B6E4D"/>
   </svg>
 
-  <h1>あなたが今していることに、<br>もう名前がついています。</h1>
-  <p class="hero-sub">誰かの顔が浮かんだ。<br>それだけで、もう十分です。</p>
+  <p class="hero-sub">このページは、「紹介してください」と<br>お願いするページではありません。</p>
+
 </header>
 
 <main>
