@@ -1,0 +1,620 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>会社概要｜Human Warmth Lab TAGAYASU</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:   #FAF7EC;
+    --paper-2: #F1ECDA;
+    --ink:     #22322B;
+    --ink-soft:#4C5A50;
+    --pine:    #24413A;
+    --pine-2:  #2F4F45;
+    --lime:    #C9DA34;
+    --lime-deep:#B4C42B;
+    --clay:    #9C7C4B;
+    --clay-soft:#C9AE84;
+    --line:    rgba(34,50,43,0.14);
+
+    --serif: "Shippori Mincho", serif;
+    --sans:  "Zen Kaku Gothic New", sans-serif;
+
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 40px;
+    --space-5: 64px;
+    --space-6: 96px;
+    --space-7: 140px;
+
+    --maxw: 1080px;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:400;
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  img,svg{ display:block; max-width:100%; }
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding-left:var(--space-4);
+    padding-right:var(--space-4);
+  }
+
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:12px;
+    letter-spacing:0.28em;
+    font-weight:700;
+    text-transform:uppercase;
+    color:var(--clay);
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;
+    height:1px;
+    background:var(--clay);
+    display:inline-block;
+  }
+
+  /* reveal-on-scroll */
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:calc(var(--space-6) + 20px) var(--space-4) var(--space-6);
+    overflow:hidden;
+  }
+  .hero-inner{
+    max-width:var(--maxw);
+    margin:0 auto;
+    position:relative;
+    z-index:2;
+  }
+  .hero .eyebrow{ margin-bottom:var(--space-3); }
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:700;
+    color:var(--pine);
+    font-size:clamp(34px, 5.4vw, 62px);
+    line-height:1.55;
+    letter-spacing:0.02em;
+    margin:0 0 var(--space-4);
+    max-width:15ch;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--clay);
+  }
+  .hero-sub{
+    font-size:15px;
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin:0;
+    letter-spacing:0.02em;
+  }
+
+  .rings{
+    position:absolute;
+    right:-90px;
+    top:50%;
+    transform:translateY(-50%);
+    width:520px;
+    height:520px;
+    z-index:1;
+    opacity:0.92;
+  }
+  @media (max-width: 900px){
+    .rings{ right:-220px; opacity:0.5; }
+  }
+  .rings svg{ width:100%; height:100%; }
+  .ring-anim circle{
+    transform-origin:center;
+    animation: breathe 7s ease-in-out infinite;
+  }
+  .ring-anim circle:nth-child(2){ animation-delay:0.4s; }
+  .ring-anim circle:nth-child(3){ animation-delay:0.8s; }
+  .ring-anim circle:nth-child(4){ animation-delay:1.2s; }
+  @keyframes breathe{
+    0%, 100% { transform:scale(1); }
+    50% { transform:scale(1.035); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .ring-anim circle{ animation:none; }
+    .reveal{ opacity:1; transform:none; transition:none; }
+  }
+
+  /* ---------- SECTION shells ---------- */
+  section{ position:relative; }
+  .section-pad{ padding:var(--space-6) var(--space-4); }
+  .section-head{ margin-bottom:var(--space-5); }
+  .section-head h2{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:clamp(24px, 3vw, 32px);
+    color:var(--pine);
+    margin:14px 0 0;
+  }
+
+  /* ---------- MESSAGE ---------- */
+  .message{ background:var(--paper); }
+  .message-grid{
+    max-width:var(--maxw);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:var(--space-5);
+  }
+  @media (max-width: 760px){
+    .message-grid{ grid-template-columns:1fr; gap:var(--space-3); }
+  }
+  .message-mark{
+    display:flex;
+    align-items:flex-start;
+    justify-content:flex-start;
+  }
+  .message-mark svg{ width:88px; height:88px; }
+  .message p{
+    font-size:16.5px;
+    color:var(--ink);
+    margin:0 0 1.5em;
+    max-width:56ch;
+  }
+  .message p.quote{
+    font-family:var(--serif);
+    font-size:20px;
+    color:var(--pine);
+    line-height:1.9;
+  }
+  .signature{
+    margin-top:var(--space-3);
+    font-family:var(--serif);
+    font-size:15px;
+    color:var(--ink-soft);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .signature::before{
+    content:"";
+    width:34px; height:1px;
+    background:var(--line);
+  }
+
+  /* ---------- MISSION (full bleed) ---------- */
+  .mission{
+    background:var(--lime);
+    color:var(--pine);
+    padding:var(--space-7) var(--space-4);
+    overflow:hidden;
+    position:relative;
+  }
+  .mission-watermark{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:900px;
+    height:900px;
+    opacity:0.12;
+    pointer-events:none;
+  }
+  .mission-inner{
+    max-width:760px;
+    margin:0 auto;
+    text-align:center;
+    position:relative;
+    z-index:2;
+  }
+  .mission .eyebrow{ justify-content:center; color:var(--pine); }
+  .mission .eyebrow::before{ background:var(--pine); }
+  .mission h2{
+    font-family:var(--serif);
+    font-weight:800;
+    font-size:clamp(28px, 4.4vw, 44px);
+    line-height:1.65;
+    margin:var(--space-3) 0 var(--space-4);
+  }
+  .mission p{
+    font-size:16px;
+    line-height:2;
+    color:var(--pine-2);
+    max-width:52ch;
+    margin:0 auto var(--space-4);
+  }
+  .mission .couplet{
+    font-family:var(--serif);
+    font-size:16px;
+    color:var(--pine);
+    line-height:2;
+    margin-top:var(--space-3);
+    opacity:0.85;
+  }
+
+  /* ---------- VALUES ---------- */
+  .values{ background:var(--paper); }
+  .values-grid{
+    max-width:var(--maxw);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:var(--space-4);
+  }
+  @media (max-width: 860px){
+    .values-grid{ grid-template-columns:1fr; gap:var(--space-4); }
+  }
+  .value-card{
+    padding-top:var(--space-3);
+    border-top:1px solid var(--line);
+  }
+  .value-badge{
+    width:46px; height:46px;
+    margin-bottom:var(--space-3);
+  }
+  .value-card h3{
+    font-family:var(--serif);
+    font-size:19px;
+    color:var(--pine);
+    font-weight:700;
+    line-height:1.6;
+    margin:0 0 12px;
+  }
+  .value-card p{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  /* ---------- PROFILE TABLE ---------- */
+  .profile{ background:var(--paper-2); }
+  .profile-table{
+    max-width:var(--maxw);
+    margin:0 auto;
+  }
+  .profile-row{
+    display:grid;
+    grid-template-columns:200px 1fr;
+    gap:var(--space-4);
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .profile-row:first-child{ border-top:1px solid var(--line); }
+  @media (max-width: 640px){
+    .profile-row{ grid-template-columns:1fr; gap:8px; padding:18px 0; }
+  }
+  .profile-label{
+    font-family:var(--sans);
+    font-size:13px;
+    letter-spacing:0.12em;
+    color:var(--clay);
+    font-weight:700;
+    padding-top:2px;
+  }
+  .profile-value{
+    font-size:15.5px;
+    color:var(--ink);
+  }
+  .biz-list{
+    list-style:none;
+    margin:0; padding:0;
+    display:grid;
+    gap:8px;
+  }
+  .biz-list li{
+    position:relative;
+    padding-left:18px;
+  }
+  .biz-list li::before{
+    content:"";
+    position:absolute;
+    left:0; top:0.75em;
+    width:7px; height:7px;
+    border-radius:50%;
+    background:var(--lime-deep);
+    border:1px solid var(--clay);
+  }
+  .biz-list li strong{
+    color:var(--pine);
+    font-weight:700;
+  }
+  .profile-value a{
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+  }
+  .profile-value a:hover{ border-color:var(--clay); color:var(--pine); }
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  .contact{
+    background:var(--pine);
+    color:var(--paper);
+    padding:var(--space-6) var(--space-4) var(--space-5);
+  }
+  .contact-inner{
+    max-width:var(--maxw);
+    margin:0 auto;
+  }
+  .contact .eyebrow{ color:var(--lime); }
+  .contact .eyebrow::before{ background:var(--lime); }
+  .contact h2{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:clamp(22px, 3vw, 30px);
+    margin:14px 0 var(--space-4);
+    color:var(--paper);
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:var(--space-3);
+    margin-bottom:var(--space-5);
+    font-size:15px;
+  }
+  @media (max-width:640px){ .contact-grid{ grid-template-columns:1fr; } }
+  .contact-grid dt{
+    font-size:12px;
+    letter-spacing:0.14em;
+    color:var(--clay-soft);
+    margin-bottom:6px;
+  }
+  .contact-grid dd{
+    margin:0 0 var(--space-3);
+    color:var(--paper);
+  }
+  .contact-grid a{ color:var(--paper); text-decoration:none; border-bottom:1px solid rgba(250,247,236,0.35); }
+  .contact-grid a:hover{ border-color:var(--lime); color:var(--lime); }
+  .contact-close{
+    border-top:1px solid rgba(250,247,236,0.18);
+    padding-top:var(--space-4);
+    font-family:var(--serif);
+    font-size:15px;
+    color:var(--clay-soft);
+    line-height:2;
+  }
+
+  /* ---------- SITE HEADER (共通ナビ) ---------- */
+  .site-header{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px var(--space-4);border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:100;
+    background:rgba(250,247,236,.94);backdrop-filter:blur(8px);
+  }
+  .h-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .h-logo-text{font-family:var(--serif);font-size:14px;font-weight:700;color:var(--pine);letter-spacing:.06em;}
+  .h-back{font-family:var(--sans);font-size:12px;color:var(--ink-soft);text-decoration:none;letter-spacing:.06em;border-bottom:1px solid var(--line);}
+  .h-back:hover{color:var(--clay);border-color:var(--clay);}
+
+  /* ---------- PAGE TOP (Back to Top 補助リンク) ---------- */
+  .pagetop{
+    display:block;text-align:center;margin:56px auto 0;
+    font-family:var(--sans);font-size:11px;letter-spacing:.25em;
+    color:var(--ink-soft);text-decoration:none;
+  }
+  .pagetop:hover{color:var(--clay);}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="https://tagayasu-lab.jp/" class="h-logo">
+    <span class="h-logo-text">Human Warmth Lab TAGAYASU</span>
+  </a>
+  <a href="https://tagayasu-lab.jp/" class="h-back">← トップへ</a>
+</header>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">ABOUT — 会社概要</p>
+      <h1>我が家のように、<br>愛せる会社を<em>。</em></h1>
+      <p class="hero-sub">Human Warmth Lab TAGAYASU は、人と組織の"心の土壌"に向き合う経営支援業です。</p>
+    </div>
+    <div class="rings" aria-hidden="true">
+      <svg viewBox="0 0 400 400" class="ring-anim">
+        <circle cx="200" cy="200" r="190" fill="none" stroke="var(--clay-soft)" stroke-width="1" opacity="0.5"/>
+        <circle cx="200" cy="200" r="150" fill="none" stroke="var(--clay)" stroke-width="1.4" opacity="0.55"/>
+        <circle cx="200" cy="200" r="108" fill="var(--pine)" opacity="0.08"/>
+        <circle cx="200" cy="200" r="108" fill="none" stroke="var(--pine)" stroke-width="1.4" opacity="0.5"/>
+        <circle cx="200" cy="200" r="66" fill="var(--lime)" opacity="0.9"/>
+        <path d="M200 165 C 214 182, 214 198, 200 210 C 186 198, 186 182, 200 165 Z" fill="var(--pine)" opacity="0.85"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- MESSAGE -->
+  <section class="message section-pad">
+    <div class="message-grid">
+      <div class="message-mark reveal">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="56" fill="none" stroke="var(--clay-soft)" stroke-width="1"/>
+          <circle cx="60" cy="60" r="40" fill="none" stroke="var(--clay)" stroke-width="1.2"/>
+          <circle cx="60" cy="60" r="24" fill="var(--pine)" opacity="0.1"/>
+          <circle cx="60" cy="60" r="24" fill="none" stroke="var(--pine)" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow">MESSAGE — 代表メッセージ</p>
+        <p class="quote" style="margin-top:20px;">「我が家のように愛せる会社を、社員と一緒につくりたい。」</p>
+        <p style="margin-top:28px;">多くの経営者と対話を重ねる中で、幾度となく耳にしてきた言葉です。</p>
+        <p>制度を整えても、研修を重ねても、なぜか組織の空気は変わらない——。その本当の理由は、目に見える仕組みではなく、目に見えない"心の土壌"にあると、私は考えています。</p>
+        <p>土を耕すように、人と人の「あいだ」に手をかけていく。それが、TAGAYASUの仕事です。</p>
+        <p class="signature">代表　大竹 泰和</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mission">
+    <svg class="mission-watermark" viewBox="0 0 400 400" aria-hidden="true">
+      <circle cx="200" cy="200" r="196" fill="none" stroke="var(--pine)" stroke-width="1"/>
+      <circle cx="200" cy="200" r="150" fill="none" stroke="var(--pine)" stroke-width="1"/>
+      <circle cx="200" cy="200" r="104" fill="none" stroke="var(--pine)" stroke-width="1"/>
+      <circle cx="200" cy="200" r="58" fill="none" stroke="var(--pine)" stroke-width="1"/>
+    </svg>
+    <div class="mission-inner reveal">
+      <p class="eyebrow">MISSION — 私たちの理念</p>
+      <h2>人の心を耕し、<br>未来を拓く土になる。</h2>
+      <p>私たちは、組織の課題を「人の問題」ではなく「土壌の問題」として捉えています。社員が自ら学び、お互いを大切にし、この会社に愛着を持てる。そんな土壌が育てば、制度も戦略も、はじめて根を張ることができます。</p>
+      <p class="couplet">土は、忘れ去られていい。<br>花が咲けば、それでいい。</p>
+    </div>
+
+  <a href="#" class="pagetop" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ PAGE TOP</a>
+
+  </section>
+
+  <!-- VALUES -->
+  <section class="values section-pad">
+    <div class="section-head reveal" style="max-width:var(--maxw); margin-left:auto; margin-right:auto;">
+      <p class="eyebrow">VALUES — 私たちが大切にしていること</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <svg class="value-badge" viewBox="0 0 60 60" aria-hidden="true">
+          <circle cx="30" cy="30" r="27" fill="none" stroke="var(--clay)" stroke-width="1.2"/>
+          <text x="30" y="36" text-anchor="middle" font-family="Shippori Mincho, serif" font-size="16" fill="var(--pine)">01</text>
+        </svg>
+        <h3>社員が自ら学び、<br>動く組織を残す</h3>
+        <p>「みんなで学ぶ会社にしたい」という経営者の願いを受け取り、社員自身が動き出す土壌を残すことをゴールにしています。</p>
+      </div>
+      <div class="value-card reveal">
+        <svg class="value-badge" viewBox="0 0 60 60" aria-hidden="true">
+          <circle cx="30" cy="30" r="27" fill="none" stroke="var(--clay)" stroke-width="1.2"/>
+          <text x="30" y="36" text-anchor="middle" font-family="Shippori Mincho, serif" font-size="16" fill="var(--pine)">02</text>
+        </svg>
+        <h3>AI時代こそ、<br>人が関係性を耕す</h3>
+        <p>情報の処理はAIにもできますが、沈黙の重さや声の震えを受け止め、「ここにいていい」と伝えることは、人にしかできません。</p>
+      </div>
+      <div class="value-card reveal">
+        <svg class="value-badge" viewBox="0 0 60 60" aria-hidden="true">
+          <circle cx="30" cy="30" r="27" fill="none" stroke="var(--clay)" stroke-width="1.2"/>
+          <text x="30" y="36" text-anchor="middle" font-family="Shippori Mincho, serif" font-size="16" fill="var(--pine)">03</text>
+        </svg>
+        <h3>愛着が生まれる、<br>組織の根っこを育てる</h3>
+        <p>「この会社が好きだ」という気持ちが社員を自走させ、100年続く組織の根っこになると信じています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFILE -->
+  <section class="profile section-pad">
+    <div class="section-head reveal" style="max-width:var(--maxw); margin-left:auto; margin-right:auto;">
+      <p class="eyebrow">PROFILE — 会社概要</p>
+    </div>
+    <div class="profile-table reveal">
+      <div class="profile-row">
+        <div class="profile-label">会社名</div>
+        <div class="profile-value">Human Warmth Lab TAGAYASU</div>
+      </div>
+      <div class="profile-row">
+        <div class="profile-label">代表者</div>
+        <div class="profile-value">大竹 泰和</div>
+      </div>
+      <div class="profile-row">
+        <div class="profile-label">設立</div>
+        <div class="profile-value">2026年1月</div>
+      </div>
+      <div class="profile-row">
+        <div class="profile-label">所在地</div>
+        <div class="profile-value">〒662-0854　兵庫県西宮市櫨塚町2-20　3F</div>
+      </div>
+      <div class="profile-row">
+        <div class="profile-label">電話番号</div>
+        <div class="profile-value"><a href="tel:09090432847">090-9043-2847</a></div>
+      </div>
+      <div class="profile-row">
+        <div class="profile-label">メールアドレス</div>
+        <div class="profile-value"><a href="mailto:hirokazu.otake@tagayasu-lab.jp">hirokazu.otake@tagayasu-lab.jp</a></div>
+      </div>
+      <div class="profile-row">
+        <div class="profile-label">事業内容</div>
+        <div class="profile-value">
+          <ul class="biz-list">
+            <li><strong>組織開発支援「耕育（こういく）」</strong>——社員が自ら学び、動き出す組織づくりを、数ヶ月単位で伴走支援</li>
+            <li><strong>人材育成ロードマップ設計</strong>——企業ごとの学びの計画づくりと、助成金活用のご相談</li>
+            <li><strong>社内対話・ワークショップの実施</strong>——本音が出やすい会議・対話の場を設計</li>
+            <li><strong>組織状態の定点診断・月次伴走</strong>——Nukumol診断で状態を定期的に可視化し、早めに手を打つ</li>
+            <li><strong>教育コンテンツの定期提供</strong>——日々の対話のきっかけになる問いや言葉をお届け</li>
+            <li><strong>経営者・個人向け伴走支援</strong>——仕事と暮らしを一体で整えるマンツーマンサポート</li>
+            <li><strong>「ぬくもる　心の温度診断（Nukumol）」の企画・提供</strong>——組織の状態を数値で可視化する無料診断ツール</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  <a href="#" class="pagetop" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ PAGE TOP</a>
+
+  </section>
+
+  <!-- CONTACT -->
+  <footer class="contact">
+    <div class="contact-inner">
+      <p class="eyebrow">CONTACT — お問い合わせ</p>
+      <h2>耕すことについて、<br>いつでもお話ししましょう。</h2>
+      <dl class="contact-grid">
+        <div>
+          <dt>所在地</dt>
+          <dd>〒662-0854　兵庫県西宮市櫨塚町2-20　3F</dd>
+          <dt>電話番号</dt>
+          <dd><a href="tel:09090432847">090-9043-2847</a></dd>
+        </div>
+        <div>
+          <dt>メールアドレス</dt>
+          <dd><a href="mailto:hirokazu.otake@tagayasu-lab.jp">hirokazu.otake@tagayasu-lab.jp</a></dd>
+        </div>
+      </dl>
+      <p class="contact-close">Human Warmth Lab TAGAYASU — 人の可能性を耕し、心の温度を上げる。</p>
+      <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="display:inline-flex;align-items:center;gap:6px;margin-top:32px;font-family:var(--sans);font-size:12px;letter-spacing:.12em;color:var(--lime);text-decoration:none;opacity:.85;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>PAGE TOP
+      </a>
+    </div>
+  </footer>
+
+<script>
+  var els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+</script>
+</body>
+</html>
+
+<!-- /wp:html -->
