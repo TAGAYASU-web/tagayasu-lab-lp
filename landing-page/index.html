@@ -596,6 +596,14 @@ body{
 .phil-date{font-family:var(--font-ui);font-size:10px;letter-spacing:.18em;color:var(--gold-lt);margin-bottom:12px;display:block;}
 .phil-verb{font-family:var(--font-serif);font-size:17px;font-weight:700;color:#ffffff;margin-bottom:10px;text-shadow:0 1px 2px rgba(0,0,0,.3);}
 .phil-body{font-family:var(--font-body);font-size:13px;color:rgba(255,255,255,.9);line-height:1.9;}
+.phil-card-link{
+  display:inline-flex;align-items:center;gap:6px;margin-top:16px;
+  font-family:var(--font-ui);font-size:12px;letter-spacing:.06em;
+  color:var(--gold-lt,#c9a55a);text-decoration:none;
+  border-bottom:1px solid rgba(200,168,80,.35);padding-bottom:2px;
+  transition:color .2s,border-color .2s;
+}
+.phil-card-link:hover{color:#fff;border-color:rgba(255,255,255,.6);}
 .phil-more{
   display:inline-block;margin-top:36px;
   font-family:var(--font-ui);font-size:12px;letter-spacing:.2em;
@@ -953,6 +961,20 @@ body{
   </div>
 </section>
 
+<!-- ══ NEXT STEP BRIDGE 1 (howto) ══ -->
+<section class="sec" style="background:var(--paper,#F7F2E6);padding-top:56px;padding-bottom:56px;">
+  <div class="sec-inner" style="text-align:center;max-width:640px;">
+    <span class="sec-label reveal" style="justify-content:center;">NEXT STEP</span>
+    <h2 class="sec-title reveal" style="font-size:clamp(20px,3vw,28px);">「うちの会社のことだ」と思ったら。</h2>
+    <p class="sec-lead reveal" style="max-width:52ch;margin-left:auto;margin-right:auto;">
+      まずは、TAGAYASUの使い方をのぞいてみてください。迷わず動ける5つのステップをまとめています。
+    </p>
+    <a href="/howto/" class="reveal" style="display:inline-flex;align-items:center;gap:10px;margin-top:8px;background:var(--gold,#806830);color:#fff;font-family:var(--font-ui);font-size:13px;letter-spacing:.1em;padding:14px 32px;text-decoration:none;transition:all .2s;border:1.5px solid var(--gold,#806830);" onmouseover="this.style.background='transparent';this.style.color='var(--gold,#806830)'" onmouseout="this.style.background='var(--gold,#806830)';this.style.color='#fff'">
+      かしこいTAGAYASUのつかい方 →
+    </a>
+  </div>
+</section>
+
 <!-- ══ WHY TAGAYASU ══ -->
 <section class="sec" style="background:var(--cream);">
   <div class="sec-inner">
@@ -1057,36 +1079,42 @@ body{
         <span class="phil-date">月曜 ｜ Instagram 毎週月曜 朝</span>
         <div class="phil-verb">経営者の"コ"を耕す</div>
         <p class="phil-body">孤独。孤立。固執。枯渇。困惑。経営者だけが抱える、言葉にならない内面の状態に、TAGAYASUは名前をつける。5つの「負のコ」を耕し、やがて恍惚・鼓動・好奇心・貢献という「正のコ」へ。</p>
+              <a href="https://www.instagram.com/tagayasu.official/" target="_blank" rel="noopener" class="phil-card-link">📸 Instagramで読む →</a>
       </div>
 
       <div class="phil-card phil-card-tue reveal">
         <span class="phil-date">火曜 ｜ Instagram 毎週火曜 朝</span>
         <div class="phil-verb">人づくりの栄養学</div>
         <p class="phil-body">日々の学びは、そのままでは「情報」に過ぎない。でも、自分に問い直した瞬間に、「栄養」になる。語っていることを生きているか。知っていることをやっているか。</p>
+              <a href="https://www.instagram.com/tagayasu.official/" target="_blank" rel="noopener" class="phil-card-link">📸 Instagramで読む →</a>
       </div>
 
       <div class="phil-card phil-card-wed reveal">
         <span class="phil-date">水曜 ｜ note 毎週水曜 朝</span>
         <div class="phil-verb">我が家のような我が社のつくり方</div>
         <p class="phil-body">「我が家のような我が社をつくりたい。」ある経営者が、コーヒーを一口飲んで、静かに言った。土壌を耕すことでしか、生まれない。あなたの組織の土壌について、一緒に考えたい。</p>
+              <a href="https://note.com/gay_crocus1992/m/m09e31bcb459c" target="_blank" rel="noopener" class="phil-card-link">📝 noteで読む →</a>
       </div>
 
       <div class="phil-card phil-card-thu reveal">
         <span class="phil-date">木曜 ｜ Instagram 毎週木曜 朝</span>
         <div class="phil-verb">森と子どもたちと経営学</div>
         <p class="phil-body">園舎のない森のようちえんには、用意されたおもちゃが一つもない。子どもが育つ場と、人が育つ場は、同じ土壌の上にある。人は守られて育つのではなく、挑戦できる安心感の中で育つ。</p>
+              <a href="https://www.instagram.com/tagayasu.official/" target="_blank" rel="noopener" class="phil-card-link">📸 Instagramで読む →</a>
       </div>
 
       <div class="phil-card phil-card-fri reveal">
         <span class="phil-date">金曜 ｜ Instagram 毎週金曜 朝</span>
         <div class="phil-verb">マナビの現場</div>
         <p class="phil-body">企業訪問・対話・ファシリテーション。大竹泰和が実際に立った「現場」の記録。美しくまとめない。うまくいった話だけを書かない。「この人は、今日も現場にいる。」その事実だけが、信頼の土壌になる。</p>
+              <a href="https://www.instagram.com/tagayasu.official/" target="_blank" rel="noopener" class="phil-card-link">📸 Instagramで読む →</a>
       </div>
 
       <div class="phil-card phil-card-wknd reveal">
         <span class="phil-date">土・日 ｜ Instagram 毎週末</span>
         <div class="phil-verb">耕し暮らし</div>
         <p class="phil-body">台所の時間、畑の時間、つながりの時間。仕事でも、経営でも、会社でもない暮らしの時間の中に、土壌の根っこがある。「知行合一」——知っていることと、やっていることの一致。</p>
+              <a href="https://www.instagram.com/tagayasu.official/" target="_blank" rel="noopener" class="phil-card-link">📸 Instagramで読む →</a>
       </div>
 
     </div>
@@ -1096,6 +1124,20 @@ body{
     </a>
   </div>
 <div style="text-align:right;padding:0 clamp(16px,5vw,60px) 28px;"><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;letter-spacing:.12em;color:var(--gold,#b8933a);text-decoration:none;opacity:.75;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.75'"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>PAGE TOP</a></div>
+</section>
+
+<!-- ══ NEXT STEP BRIDGE 2 (tsunagikata) ══ -->
+<section class="sec" style="background:var(--paper,#F7F2E6);padding-top:56px;padding-bottom:56px;">
+  <div class="sec-inner" style="text-align:center;max-width:640px;">
+    <span class="sec-label reveal" style="justify-content:center;">NEXT STEP</span>
+    <h2 class="sec-title reveal" style="font-size:clamp(20px,3vw,28px);">読んでいて、誰かの顔が浮かんだら。</h2>
+    <p class="sec-lead reveal" style="max-width:52ch;margin-left:auto;margin-right:auto;">
+      紹介は、押し売りではなく贈り物です。伝え方に迷わないよう、TAGAYASUへのつなぎ方をご用意しています。
+    </p>
+    <a href="/tsunagikata/" class="reveal" style="display:inline-flex;align-items:center;gap:10px;margin-top:8px;background:var(--green,#4a6741);color:#fff;font-family:var(--font-ui);font-size:13px;letter-spacing:.1em;padding:14px 32px;text-decoration:none;transition:all .2s;border:1.5px solid var(--green,#4a6741);" onmouseover="this.style.background='transparent';this.style.color='var(--green,#4a6741)'" onmouseout="this.style.background='var(--green,#4a6741)';this.style.color='#fff'">
+      TAGAYASUへのつなぎ方 →
+    </a>
+  </div>
 </section>
 
 <!-- ══ NUKUMOL ══ -->
